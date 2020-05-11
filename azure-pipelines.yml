@@ -14,7 +14,7 @@ steps:
 - script: |
     echo "testing variables"
     echo "printing variable"
-    echo $TEST
+    echo $(TEST)
   displayName: 'Show variable value'
 
 
