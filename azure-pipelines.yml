@@ -32,4 +32,4 @@ steps:
 - task: CMake@1
   inputs:
     workingDirectory: 'CPPTest'
-    cmakeArgs: -DTEST_CMAKE_TASK=$env:USER
+    cmakeArgs: '-DTEST_CMAKE_TASK=$USER'
