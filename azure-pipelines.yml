@@ -22,6 +22,8 @@ steps:
     echo $env:CONFIGURATION
   displayName: 'Show variable value'
 
+- script: |
+    echo "emscripten for $USER is $EMSCRIPTEN"
 
 - script: |
     cd ./CPPTest
