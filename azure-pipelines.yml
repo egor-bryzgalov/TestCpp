@@ -17,9 +17,9 @@ steps:
 - script: |
     echo "testing variables"
     echo "printing variable"
-    echo $(test)
-    echo $TEST
-    echo $env:TEST
+    echo $(configuration)
+    echo $CONFIGURATION
+    echo $env:CONFIGURATION
   displayName: 'Show variable value'
 
 
@@ -29,4 +29,4 @@ steps:
 - task: CMake@1
   inputs:
     workingDirectory: 'CPPTest'
-    cmakeArgs: -DTEST_CMAKE_TASK=$(TEST)
+    cmakeArgs: -DTEST_CMAKE_TASK=$(configuration)
