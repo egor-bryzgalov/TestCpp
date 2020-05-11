@@ -23,10 +23,11 @@ steps:
   displayName: 'Show variable value'
 
 
-#- script: |
-#    cd ./CPPTest
-#    cmake -B build-script -DTEST_CMAKE_TASK=$TEST
+- script: |
+    cd ./CPPTest
+    echo "build-script -DTEST_CMAKE_TASK=$TEST"
+    cmake -B build-script -DTEST_CMAKE_TASK=$TEST
 - task: CMake@1
   inputs:
     workingDirectory: 'CPPTest'
-    cmakeArgs: -DTEST_CMAKE_TASK=$(CONFIGURATION)
+    cmakeArgs: -DTEST_CMAKE_TASK=$USER
