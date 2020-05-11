@@ -23,4 +23,4 @@ steps:
 - task: CMake@1
   inputs:
     workingDirectory: 'CPPTest'
-    cmakeArgs: '-DCMAKE_BUILD_TYPE=$TEST'
+    cmakeArgs: '-DCMAKE_BUILD_TYPE=$(TEST)'
