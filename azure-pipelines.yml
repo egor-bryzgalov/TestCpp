@@ -17,16 +17,16 @@ steps:
 - script: |
     echo "testing variables"
     echo "printing variable"
-    echo $(configuration)
-    echo $configuration
-    echo $env:configuration
+    echo $(test)
+    echo $TEST
+    echo $env:TEST
   displayName: 'Show variable value'
 
 
 - script: |
     cd ./CPPTest
-    cmake -B build-script -DTEST_CMAKE_TASK=$configuration
+    cmake -B build-script -DTEST_CMAKE_TASK=$TEST
 - task: CMake@1
   inputs:
     workingDirectory: 'CPPTest'
-    cmakeArgs: -DTEST_CMAKE_TASK=$(configuration)
+    cmakeArgs: -DTEST_CMAKE_TASK=$TEST
