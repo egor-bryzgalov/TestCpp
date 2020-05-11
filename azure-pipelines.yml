@@ -23,9 +23,9 @@ steps:
   displayName: 'Show variable value'
 
 
-- script: |
-    cd ./CPPTest
-    cmake -B build-script -DTEST_CMAKE_TASK=$TEST
+#- script: |
+#    cd ./CPPTest
+#    cmake -B build-script -DTEST_CMAKE_TASK=$TEST
 - task: CMake@1
   inputs:
     workingDirectory: 'CPPTest'
