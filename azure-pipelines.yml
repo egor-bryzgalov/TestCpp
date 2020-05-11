@@ -9,18 +9,21 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
+variables:
+  configuration: 'Debug'
+
 steps:
 
 - script: |
     echo "testing variables"
     echo "printing variable"
-    echo $(TEST)
-    echo $TEST
-    echo $env:TEST
+    echo $(configuration)
+    echo $configuration
+    echo $env:configuration
   displayName: 'Show variable value'
 
 
 - task: CMake@1
   inputs:
     workingDirectory: 'CPPTest'
-    cmakeArgs: '-DCMAKE_BUILD_TYPE=$(TEST)'
+    cmakeArgs: '-DCMAKE_BUILD_TYPE=$(configuration)'
