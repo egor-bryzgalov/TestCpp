@@ -27,8 +27,8 @@ steps:
 
 - script: |
     cd ./CPPTest
-    echo "build-script -DTEST_CMAKE_TASK=$USER"
-    cmake -B build-script -DTEST_CMAKE_TASK=$USER
+    echo "build-script --DTEST_CMAKE_TASK=$USER"
+    cmake -B build-script --DTEST_CMAKE_TASK=$USER
 
 - task: Bash@3
   inputs:
@@ -37,4 +37,4 @@ steps:
 - task: CMakem@1
   inputs:
     workingDirectory: 'CPPTest'
-    cmakeArgs: '-DTEST_CMAKE_TASK=$USER'
+    cmakeArgs: '--DTEST_CMAKE_TASK=$USER'
