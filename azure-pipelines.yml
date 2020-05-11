@@ -14,11 +14,11 @@ steps:
 - script: |
     echo "testing variables"
     echo "printing variable"
-    echo $TEST_VARIABLE
+    echo $TEST
   displayName: 'Show variable value'
 
 
 - task: CMake@1
   inputs:
     workingDirectory: 'CPPTest'
-    cmakeArgs: '-DCMAKE_BUILD_TYPE=$(TEST_VARIABLE)'
+    cmakeArgs: '-DCMAKE_BUILD_TYPE=$(TEST)'
