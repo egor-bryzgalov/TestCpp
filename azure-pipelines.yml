@@ -18,12 +18,13 @@ steps:
     echo "testing variables"
     echo "printing variable"
     echo $(configuration)
-    echo $configuration
-    echo $env:configuration
+    echo $CONFIGURATION
+    echo $env:CONFIGURATION
   displayName: 'Show variable value'
 
 
+- script: cmake -B build-script -DTEST_CMAKE_TASK=$CONFIGURATION
 - task: CMake@1
   inputs:
     workingDirectory: 'CPPTest'
-    cmakeArgs: '-DCMAKE_BUILD_TYPE=$configuration'
+    cmakeArgs: -DTEST_CMAKE_TASK=$(configuration)
