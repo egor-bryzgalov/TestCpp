@@ -15,10 +15,12 @@ steps:
     echo "testing variables"
     echo "printing variable"
     echo $(TEST)
+    echo $TEST
+    echo $env:TEST
   displayName: 'Show variable value'
 
 
 - task: CMake@1
   inputs:
     workingDirectory: 'CPPTest'
-    cmakeArgs: '-DCMAKE_BUILD_TYPE=$(TEST)'
+    cmakeArgs: '-DCMAKE_BUILD_TYPE=$TEST'
