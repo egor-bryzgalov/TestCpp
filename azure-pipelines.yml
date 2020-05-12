@@ -8,7 +8,7 @@ trigger:
 
 pool:
   ##vmImage: 'ubuntu-latest'
-  vmImage: 'default'
+  name: 'Default'
 
 variables:
   configuration: 'Debug'
