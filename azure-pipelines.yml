@@ -34,9 +34,9 @@ steps:
 - task: Bash@3
   inputs:
     targetType: 'inline'
-    script: 'echo "$USER"'
+    script: 'echo "%USERNAME%"'
     
 - task: CMakem@1
   inputs:
     workingDirectory: 'CPPTest'
-    cmakeArgs: '-DTEST_CMAKE_TASK="$USER"'
+    cmakeArgs: '-DTEST_CMAKE_TASK="%USERNAME%"'
