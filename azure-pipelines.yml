@@ -15,26 +15,6 @@ variables:
 
 steps:
 
-- script: |
-    echo "testing variables"
-    echo "printing variable"
-    echo $(configuration)
-    echo $CONFIGURATION
-    echo $env:CONFIGURATION
-  displayName: 'Show variable value'
-
-- script: |
-    echo emscripten for $USER is $EMSCRIPTEN
-
-- script: |
-    cd ./CPPTest
-    echo "build-script -DTEST_CMAKE_TASK=$USER"
-    cmake -B build-script -DTEST_CMAKE_TASK=$USER
-
-- task: Bash@3
-  inputs:
-    targetType: 'inline'
-    script: 'echo "$USER"'
     
 - task: CMakem@1
   inputs:
