@@ -36,7 +36,7 @@ steps:
     targetType: 'inline'
     script: 'echo "$USER"'
     
-- task: CMakem@1
+- task: CMake@1
   inputs:
     workingDirectory: 'CPPTest'
     cmakeArgs: '-DTEST_CMAKE_TASK="$USER"'
