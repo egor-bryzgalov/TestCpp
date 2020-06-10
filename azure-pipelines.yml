@@ -20,4 +20,4 @@ steps:
   inputs:
     workingDirectory: 'CPPTest'
     cmakeArgs: '-DCMAKE_BUILD_TYPE=Release -DTEST_CMAKE_TASK=$USER -DCMAKE_CXX_COMPILER=/usr/bin/clang++ -DCMAKE_C_COMPILER=/usr/bin/clang -DCMAKE_INSTALL_PREFIX=/vstsdrive/_work/7/a/LLVMToolchain -DLLVM_ENABLE_PROJECTS=''clang;lld;lldb'''
-    runInsideShell: true
+    runInsideShell: false
