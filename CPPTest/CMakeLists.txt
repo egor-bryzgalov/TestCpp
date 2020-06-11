@@ -9,5 +9,6 @@ project ("CPPTest")
 add_executable (CPPTest "CPPTest.cpp" "CPPTest.h")
 
 message(STATUS "Value of TEST_CMAKE_TASK is: ${TEST_CMAKE_TASK}")
+message(STATUS "Value of LLVM_ENABLE_PROJECTS is: ${LLVM_ENABLE_PROJECTS}")
 
 # TODO: Add tests and install targets if needed.
