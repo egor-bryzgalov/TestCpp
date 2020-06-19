@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'macOS-latest'
+  vmImage: 'Ubuntu-latest'
   #name: 'Default'
 
 variables:
@@ -22,7 +22,7 @@ steps:
     inputs:
       targetType: 'inline'
       script: |
-        echo 'export TESTVAR=value' > add_test_var.sh
+        echo 'sudo -H gedit /etc/environment' > add_test_var.sh
 
   - task: Bash@3
     inputs:
@@ -37,5 +37,5 @@ steps:
 - task: CMakem@1
   inputs:
     workingDirectory: 'CPPTest'
-    cmakeArgs: -DCMAKE_SHELL=true -DTEST_ONE=one;two -DTEST_TWO=/one/two/three -DTEST_VARIABLE=$USER -DTEST_WIN_VARIABLE=%OS%
+    cmakeArgs: -DCMAKE_SHELL=true -DTEST_ONE=one;two -DTEST_TWO=/one/two/three -DTEST_VARIABLE=$TESTVAR -DTEST_WIN_VARIABLE=%OS%
     runInsideShell: true
