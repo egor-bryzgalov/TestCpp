@@ -21,7 +21,7 @@ steps:
     inputs:
       targetType: 'inline'
       script: |
-        echo 'export TESTVAR=value' > add_test_env.sh
+        export TESTVAR=value
   - task: Bash@3
     inputs:
       targetType: 'inline'
