@@ -22,7 +22,11 @@ steps:
     inputs:
       targetType: 'inline'
       script: |
-        export TESTVAR=value
+        echo 'export TESTVAR=value' > add_test_var.sh
+
+  - task: Bash@3
+    inputs:
+      filePath: './add_test_var.sh'
   - task: Bash@3
     inputs:
       targetType: 'inline'
