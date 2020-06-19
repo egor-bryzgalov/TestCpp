@@ -21,15 +21,15 @@ steps:
     inputs:
       targetType: 'inline'
       script: |
-        export TESTVAR=value' > add_test_env.sh
+        export TESTVAR=value > add_test_env.sh
   - task: Bash@3
     inputs:
       targetType: 'inline'
       script: |
         printenv
 
-- task: CMakem@1
+- task: CMake@1
   inputs:
     workingDirectory: 'CPPTest'
-    cmakeArgs: -DCMAKE_SHELL=true -DTEST_ONE=one;two -DTEST_TWO=/one/two/three -DTEST_VARIABLE=$TESTVAR -DTEST_WIN_VARIABLE=%OS%
-    runInsideShell: true
+    cmakeArgs: -DCMAKE_SHELL=true -DTEST_ONE=one;two -DTEST_TWO=/one/two/three -DTEST_VARIABLE=$env.USER -DTEST_WIN_VARIABLE=%OS%
+    #runInsideShell: true
