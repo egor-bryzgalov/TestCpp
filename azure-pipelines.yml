@@ -25,8 +25,8 @@ steps:
         . ./add_test_env.sh
         echo $TEST
 
-- task: CMakem@1
+- task: CMake@1
   inputs:
-    workingDirectory: 'CPPTest'
-    cmakeArgs: -DCMAKE_BUILD_TYPE=Release -DTEST_CMAKE_TASK=$0;test -DCMAKE_CXX_COMPILER=/usr/bin/clang++ -DCMAKE_C_COMPILER=/usr/bin/clang -DCMAKE_INSTALL_PREFIX=/vstsdrive/_work/7/a/LLVMToolchain -DLLVM_ENABLE_PROJECTS=clang;lld;lldb
+    workingDirectory: 'src/cmake/testfiles'
+    cmakeArgs: -DCMAKE_SHELL=true -DTEST_ONE=one;two -DTEST_TWO=/one/two/three -DTEST_VARIABLE=$TEST -DTEST_WIN_VARIABLE=%OS%
     runInsideShell: true
