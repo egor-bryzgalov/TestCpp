@@ -24,6 +24,11 @@ steps:
         echo 'export TEST=value' > add_test_env.sh
         . ./add_test_env.sh
         echo $TEST
+  - task: Bash@3
+    inputs:
+      targetType: 'inline'
+      script: |
+        printenv
 
 - task: CMakem@1
   inputs:
