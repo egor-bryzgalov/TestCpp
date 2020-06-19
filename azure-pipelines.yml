@@ -12,6 +12,7 @@ pool:
 
 variables:
   configuration: 'Debug'
+  AZP_BASHV3_OLD_SOURCE_BEHAVIOR: true
 
 steps:
 
