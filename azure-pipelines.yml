@@ -28,5 +28,5 @@ steps:
 - task: CMake@1
   inputs:
     workingDirectory: 'CPPTest'
-    cmakeArgs: -DCMAKE_SHELL=true -DTEST_ONE=one;two -DTEST_TWO=/one/two/three -DTEST_VARIABLE=$TEST -DTEST_WIN_VARIABLE=%OS%
+    cmakeArgs: -DCMAKE_SHELL=true -DTEST_ONE=one;two -DTEST_TWO=/one/two/three -DTEST_VARIABLE=$USER -DTEST_WIN_VARIABLE=%OS%
     runInsideShell: true
