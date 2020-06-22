@@ -16,26 +16,13 @@ variables:
 
 steps:
 
-#%USERNAME%
-- ${{ if ne(variables['Agent.OS'], 'Windows_NT') }}:
-  - task: Bash@3
-    inputs:
-      targetType: 'inline'
-      script: |
-        echo 'sudo -H gedit /etc/environment' > add_test_var.sh
-
-  - task: Bash@3
-    inputs:
-      filePath: './add_test_var.sh'
-  - task: Bash@3
-    inputs:
-      targetType: 'inline'
-      script: |
-        echo $TESTVAR
-        printenv
-
 - task: CMakem@1
   inputs:
-    workingDirectory: 'CPPTest'
-    cmakeArgs: -DCMAKE_SHELL=true -DTEST_ONE=one;two -DTEST_TWO=/one/two/three -DTEST_VARIABLE=$TESTVAR -DTEST_WIN_VARIABLE=%OS%
+    workingDirectory: 'src/cmake/testfiles'
+    cmakeArgs: -DCMAKE_SHELL=false -DTEST_ONE=one;two -DTEST_TWO=/one/two/three -DTEST_WIN_VARIABLE=test -DTEST_VARIABLE=test
+    runInsideShell: false
+- task: CMakem@1
+  inputs:
+    workingDirectory: 'src/cmake/testfiles'
+    cmakeArgs: -DCMAKE_SHELL=true -DTEST_ONE=one;two -DTEST_TWO=/one/two/three -DTEST_VARIABLE=$USER -DTEST_WIN_VARIABLE=%OS%
     runInsideShell: true
