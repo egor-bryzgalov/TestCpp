@@ -6,7 +6,7 @@ cmake_minimum_required (VERSION 3.8)
 project ("CPPTest")
 
 # Add source to this project's executable.
-add_executable(app main.cpp)
+add_executable(app CPPTest.cpp)
 
 message(STATUS "Value of CMAKE_SHELL is: ${CMAKE_SHELL}")
 message(STATUS "Value of TEST_ONE is: ${TEST_ONE}")
