@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'macOS-latest'
+  vmImage: 'Windows-latest'
   #name: 'Default'
 
 variables:
@@ -16,13 +16,20 @@ variables:
 
 steps:
 
-- task: CMakem@1
+- task: InstallSSHKey@0
   inputs:
-    workingDirectory: 'CPPTest'
-    cmakeArgs: -DCMAKE_SHELL=false -DTEST_ONE=one;two -DTEST_TWO=/one/two/three -DTEST_WIN_VARIABLE=test -DTEST_VARIABLE=test
-    runInsideShell: false
-- task: CMake@1
-  inputs:
-    workingDirectory: 'CPPTest'
-    cmakeArgs: -DCMAKE_SHELL=true -DTEST_ONE=one;two -DTEST_TWO=/one/two/three -DTEST_VARIABLE=$USER -DTEST_WIN_VARIABLE=%OS%
-    runInsideShell: true
+    knownHostsEntry: |
+      github.com,140.82.118.4 ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ==ec2-3-17-130-140.us-east-2.compute.amazonaws.com,3.17.130.140 ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBHCf7kf11cdLokj9G78656tu7OtSPh86bGpx14MOkELTSZfEiCDhHsoF2lgcD2fcydmztkMmJUgfkVHRlJuvdLw=
+      ec2-3-17-130-140.us-east-2.compute.amazonaws.com,3.17.130.140 ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBHCf7kf11cdLokj9G78656tu7OtSPh86bGpx14MOkELTSZfEiCDhHsoF2lgcD2fcydmztkMmJUgfkVHRlJuvdLw=
+    sshKeySecureFile: 'id_rsa'
+
+#- task: CMakem@1
+#  inputs:
+#    workingDirectory: 'CPPTest'
+#    cmakeArgs: -DCMAKE_SHELL=false -DTEST_ONE=one;two -DTEST_TWO=/one/two/three -DTEST_WIN_VARIABLE=test -DTEST_VARIABLE=test
+#    runInsideShell: false
+#- task: CMake@1
+#  inputs:
+#    workingDirectory: 'CPPTest'
+#    cmakeArgs: -DCMAKE_SHELL=true -DTEST_ONE=one;two -DTEST_TWO=/one/two/three -DTEST_VARIABLE=$USER -DTEST_WIN_VARIABLE=%OS%
+#    runInsideShell: true
