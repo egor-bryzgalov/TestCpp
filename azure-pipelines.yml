@@ -7,8 +7,8 @@ trigger:
 - master
 
 pool:
-  vmImage: 'macOS-latest'
-  #name: 'Default'
+  #vmImage: 'macOS-latest'
+  name: 'Default'
 
 variables:
   configuration: 'Debug'
