@@ -20,7 +20,7 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      $urlbase = 'https://foobar.blob.core.windows.net/$' + 'web/software/'
+      $urlbase = 'https://foobar.blob.core.windows.net/`$' + 'web/software/'
       Write-Host "##vso[task.setvariable variable=DownloadURLBase]$urlbase"
 
 - task: PowerShell@2
