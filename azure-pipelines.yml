@@ -19,6 +19,7 @@ jobs:
   - job: A
     steps:
     - task: PowerShell@2
+      name: 'first'
       inputs:
         targetType: 'inline'
         script: |
@@ -31,7 +32,7 @@ jobs:
     - task: PowerShell@2
       inputs:
         targetType: 'inline'
-        script: 'echo $(DownloadURLBase)'
+        script: 'echo $(first.DownloadURLBase)'
 
 #- task: InstallSSHKeym@0
 # inputs:
