@@ -15,21 +15,21 @@ variables:
   AZP_BASHV3_OLD_SOURCE_BEHAVIOR: true
 
 jobs:
-  -job:
-  steps:
-  - task: PowerShell@2
-    inputs:
-      targetType: 'inline'
-      script: |
-        $urlbase = 'https://foobar.blob.core.windows.net/`$' + 'web/software/'
-        Write-Host "##vso[task.setvariable variable=DownloadURLBase;isOutput=true]$urlbase"
+  - job: A
+    steps:
+    - task: PowerShell@2
+      inputs:
+        targetType: 'inline'
+        script: |
+          $urlbase = 'https://foobar.blob.core.windows.net/`$' + 'web/software/'
+          Write-Host "##vso[task.setvariable variable=DownloadURLBase;isOutput=true]$urlbase"
 
-  -job:
-  steps:
-  - task: PowerShell@2
-    inputs:
-      targetType: 'inline'
-      script: 'echo $(DownloadURLBase)'
+  - job:
+    steps:
+    - task: PowerShell@2
+      inputs:
+        targetType: 'inline'
+        script: 'echo $(A.DownloadURLBase)'
 
 #- task: InstallSSHKeym@0
 # inputs:
