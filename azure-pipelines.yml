@@ -28,11 +28,13 @@ jobs:
 
   - job:
     dependsOn: A
+    variables:
+      DownloadURLBase: $[ dependencies.A.outputs['first.DownloadURLBase'] ]
     steps:
     - task: PowerShell@2
       inputs:
         targetType: 'inline'
-        script: 'echo $(A.DownloadURLBase)'
+        script: 'echo $(DownloadURLBase)'
 
 #- task: InstallSSHKeym@0
 # inputs:
