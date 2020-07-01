@@ -23,4 +23,4 @@ steps:
     captureConsole: true
     capturePipeline: true
     isParameterizedJob: false
-    jobParameters: 'paraparaparametr=true'
+    jobParameters: 'paraparaparametr==true'
