@@ -15,49 +15,11 @@ variables:
   AZP_BASHV3_OLD_SOURCE_BEHAVIOR: true
 
 
-jobs:
-  - job: A
-    steps:
-    - task: PowerShell@2
-      name: 'first'
-      inputs:
-        targetType: 'inline'
-        script: |
-          $urlbase = 'https://foobar.blob.core.windows.net/`$' + 'web/software/'
-          Write-Host "##vso[task.setvariable variable=DownloadURLBase;isOutput=true]$urlbase"
-
-  - job:
-    dependsOn: A
-    variables:
-      DownloadURLBase: $[ dependencies.A.outputs['first.DownloadURLBase'] ]
-    steps:
-    - task: PowerShell@2
-      inputs:
-        targetType: 'inline'
-        script: 'echo $(DownloadURLBase)'
-
-#- task: InstallSSHKeym@0
-# inputs:
-#    knownHostsEntry: |
-##      github.com,140.82.118.4 ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ==ec2-3-17-130-140.us-east-2.compute.amazonaws.com,3.17.130.140 ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBHCf7kf11cdLokj9G78656tu7OtSPh86bGpx14MOkELTSZfEiCDhHsoF2lgcD2fcydmztkMmJUgfkVHRlJuvdLw=
-#      ec2-3-17-130-140.us-east-2.compute.amazonaws.com,3.17.130.140 ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBHCf7kf11cdLokj9G78656tu7OtSPh86bGpx14MOkELTSZfEiCDhHsoF2lgcD2fcydmztkMmJUgfkVHRlJuvdLw=
-#    sshKeySecureFile: 'test_key'
-#    sshPassphrase: 'testt'
-#    sshPublicKey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDcmCLK2njYWtE5arVysVYxApzK1OlOKkjLRnJyBanFtADk74zBR26mAFDkvRTp5Cg/3EJ6x187plVJYaV7TN5fZ79USUG26LGhs3GgIUqbMX1sHlJjFX4anGK/U+8nciOoI1MUp7Ujj0C2MOtK2KOP6djo+36PgAc0Db5l0uBZmceJerBrn/r7r8x7dqH4pCP++F6im8o0dj2zKvinKmdPwP49O5bHUg/JwWF3zf96/dLJN4Pzt9mfmNdHh30ys8j5hv1Ci5Xw6sd6+C9gIgFyJGwNp2+zU97H5ug/n02iDdzlQsjHnP+gtnev/K/f1f+g0l2rW5g4bDnCAf4BUHnj europe\v-egbryz@o21
-
-#- task: InstallSSHKeym@0
-#  inputs:
-#    knownHostsEntry: |
-#      github.com,140.82.118.4 ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ==ec2-3-17-130-140.us-east-2.compute.amazonaws.com,3.17.130.140 ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBHCf7kf11cdLokj9G78656tu7OtSPh86bGpx14MOkELTSZfEiCDhHsoF2lgcD2fcydmztkMmJUgfkVHRlJuvdLw=
-#      ec2-3-17-130-140.us-east-2.compute.amazonaws.com,3.17.130.140 ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBHCf7kf11cdLokj9G78656tu7OtSPh86bGpx14MOkELTSZfEiCDhHsoF2lgcD2fcydmztkMmJUgfkVHRlJuvdLw=
-#    sshKeySecureFile: 'id_rsa'
-#- task: CMakem@1
-#  inputs:
-#    workingDirectory: 'CPPTest'
-#    cmakeArgs: -DCMAKE_SHELL=false -DTEST_ONE=one;two -DTEST_TWO=/one/two/three -DTEST_WIN_VARIABLE=test -DTEST_VARIABLE=test
-#    runInsideShell: false
-#- task: CMake@1
-#  inputs:
-#    workingDirectory: 'CPPTest'
-#    cmakeArgs: -DCMAKE_SHELL=true -DTEST_ONE=one;two -DTEST_TWO=/one/two/three -DTEST_VARIABLE=$USER -DTEST_WIN_VARIABLE=%OS%
-#    runInsideShell: true
+steps:
+- task: JenkinsQueueJob@2
+  inputs:
+    serverEndpoint: 'Jenkins1'
+    jobName: 'TestPipeline'
+    captureConsole: true
+    capturePipeline: true
+    isParameterizedJob: false
