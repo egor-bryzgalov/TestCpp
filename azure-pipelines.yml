@@ -22,5 +22,5 @@ steps:
     jobName: 'TestPipeline'
     captureConsole: true
     capturePipeline: true
-    isParameterizedJob: false
-    jobParameters: 'test='
+    isParameterizedJob: true
+    jobParameters: 'test="somestring"'
