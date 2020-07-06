@@ -23,4 +23,5 @@ steps:
     captureConsole: true
     capturePipeline: true
     isParameterizedJob: true
-    jobParameters: 'tess="somestring"'
+    #jobParameters: 'tess="somestring"'
+    jobParameters: 'test=true'
