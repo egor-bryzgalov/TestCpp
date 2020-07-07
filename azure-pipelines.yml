@@ -16,12 +16,19 @@ variables:
 
 
 steps:
-- task: JenkinsQueueJobm@2
+#- task: JenkinsQueueJobm@2
+#  inputs:
+#    serverEndpoint: 'Jenkins1'
+#    jobName: 'TestPipeline'
+#    captureConsole: true
+#    capturePipeline: true
+#    isParameterizedJob: true
+#    #jobParameters: 'tess="somestring"'
+#    jobParameters: 'test=true'
+
+- task: CICDSampleMockDemo@1
   inputs:
-    serverEndpoint: 'Jenkins1'
-    jobName: 'TestPipeline'
-    captureConsole: true
-    capturePipeline: true
-    isParameterizedJob: true
-    #jobParameters: 'tess="somestring"'
-    jobParameters: 'test=true'
+    appName: 'asdasd'
+    buildAliasName: 'asdasd'
+    buildDropLocation: '$(Build.Binariesdirectory)'
+    sandboxName: 'asdasd'
