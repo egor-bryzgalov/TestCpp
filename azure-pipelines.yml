@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'Windows-latest'
+  vmImage: 'Ubuntu-latest'
   #name: 'Default'
 
 variables:
@@ -17,10 +17,10 @@ variables:
 
 steps:
 
-- task: Bash@3
-  inputs:
-    targetType: 'inline'
-    script: 'ls D:\a\_tasks\CICDSampleMockDemo_6f92fd8f-3076-40e1-9706-315df19c79f1\1.0.4'
+#- task: Bash@3
+#  inputs:
+#    targetType: 'inline'
+#    script: 'ls D:\a\_tasks\CICDSampleMockDemo_6f92fd8f-3076-40e1-9706-315df19c79f1\1.0.4'
 
 #- task: JenkinsQueueJobm@2
 #  inputs:
