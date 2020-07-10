@@ -21,7 +21,7 @@ steps:
   inputs:
     targetType: 'inline'
     script: 'ls /d/a/_tasks/CICDSampleMockDemo_6f92fd8f-3076-40e1-9706-315df19c79fc/1.0.1'
-d:\a\_tasks
+#d:\a\_tasks
 #- task: JenkinsQueueJobm@2
 #  inputs:
 #    serverEndpoint: 'Jenkins1'
