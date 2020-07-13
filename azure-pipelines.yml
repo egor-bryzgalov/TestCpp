@@ -7,8 +7,9 @@ trigger:
 - master
 
 pool:
-  vmImage: 'Ubuntu-latest'
-  #name: 'Default'
+  #vmImage: 'Ubuntu-latest'
+  name: 'Default'
+
 
 variables:
   configuration: 'Debug'
@@ -16,11 +17,18 @@ variables:
 
 
 steps:
-#/home/vsts/work
-- task: Bash@3
+
+- task: CopyFilesOverSSH@0
   inputs:
-    targetType: 'inline'
-    script: 'ls /home/vsts/work/_tasks/CICDSampleMockDemo_6f92fd8f-3076-40e1-9706-315df19c79fc/1.0.1'
+    sshEndpoint: 'Alex SSH server'
+    sourceFolder: 'C:\agent\_work\_tasks\CICDSampleMockDemo_6f92fd8f-3076-40e1-9706-315df19c79f1'
+    contents: '**'
+    readyTimeout: '20000'
+#/home/vsts/work
+#- task: Bash@3
+#  inputs:
+#    targetType: 'inline'
+#    script: 'ls /home/vsts/work/_tasks/CICDSampleMockDemo_6f92fd8f-3076-40e1-9706-315df19c79fc/1.0.1'
 #d:\a\_tasks
 #- task: JenkinsQueueJobm@2
 #  inputs:
@@ -32,9 +40,9 @@ steps:
 #    #jobParameters: 'tess="somestring"'
 #    jobParameters: 'test=true'
 
-- task: CICDSampleMockDemo@1
-  inputs:
-    appName: 'asdasd'
-    buildAliasName: 'asdasd'
-    buildDropLocation: '$(Build.Binariesdirectory)'
-    sandboxName: 'asdasd'
+#- task: CICDSampleMockDemo@1
+#  inputs:
+#    appName: 'asdasd'
+#    buildAliasName: 'asdasd'
+#    buildDropLocation: '$(Build.Binariesdirectory)'
+#    sandboxName: 'asdasd'
