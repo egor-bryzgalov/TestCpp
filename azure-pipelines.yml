@@ -24,6 +24,7 @@ steps:
     sourceFolder: 'C:\agent\_work\_tasks\CICDSampleMockDemo_6f92fd8f-3076-40e1-9706-315df19c79f1'
     contents: '**'
     readyTimeout: '20000'
+    targetFolder: '/home/centoss/egbryz/testfolder'
 
 #/home/vsts/work
 #- task: Bash@3
