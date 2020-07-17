@@ -31,6 +31,11 @@ steps:
 - task: Bash@3
   inputs:
     targetType: 'inline'
+    script: 'ls -la "/home/vsts/work/_temp/"'
+
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
     script: 'git clone git@test-alias:microsoft/azure-pipelines-task-lib.git'
 
 #- task: InstallSSHKey@0
