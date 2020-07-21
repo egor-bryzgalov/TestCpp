@@ -31,11 +31,11 @@ steps:
 
 - task: InstallSSHKeym@0
   inputs:
-    knownHostsEntry: 'github.com,140.82.118.4 ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ=='
-    sshPublicKey: 'ssh-rsa TESTB3NzaC1yc2EAAAADAQABAAABAQDx0xHmF8pbr0GWTvXCXDoUj62QW+gY41V2Y++bbLpl7a9qdxRTTaH9CgkWhyrJe1Ca+0IdNVk5Zlgpk81rTYUm21o6tQ25xuMjb8MBYRxEFDxqu64xlKmbciGAs+9QKWrlirkIu2kdhIbYfy5fBPrmz3iil7Ginzz0zepGVGk9w/rGdup8Wjvr/IoDqDGmvvsXzKe57hPM2p1aDdRsAOETxRqOEmqzO+XOwzSqBucbhcmLsauBOP6Zmnf0rpGcOhZpm6nblWWkkvkuxdOFA7CB5TZNW1v3nwplLEp+NUFbbSOcLnPVtoZ5cAExjb79bWIRJp4CqYw/tVEFtdASEMmF v-egbryz@o21'
-    sshKeySecureFile: 'newssh'
+    knownHostsEntry: 'github.com,140.82.118.4 ssh-rsa TESTB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ=='
+    sshPublicKey: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCjL+fv9UC/5qF4nOiMkBrSOGYaIU2BIJNnZSWnXLtudLsoPWTUotA1ACDP5pjDV9PEdSiHkdni+nTdna/jSBEHIz1rTnhUXwRgndxTnjRqHzwMd4r7N9LnYuSuMb20FJE4ndvrYWgP/kaWe11jxDe12CNUaxUBfoY/taHlsTS6M8mfGcHytGcqII2RgN4sWzBAvN1ybsnqySr/yYUk0Y0bnjrmsiOIN9EO4s4+LYOGXC0iJH31P+a/bT7eeWoBgpQDZQ5szxvcTpKFxrgK/lF3hJEXSEwXtWbdY2GK0p7bVVEaZDRfN0/8yQP0WhvIGSrZybH3s/ppMRNRN6pFxHLcjHIIAK1UleKGzOc/sVlVBOQ267MQZtF6CtGw167iCAMywXt6YOSgK1f15BXwCSLvvF1irdw/L5fm1urBHJ7p+6a2CjE+K3dko8Hm1Kz2KHamIUFlDlMgwEvUUnVGAqsqL7B249tf9i11n3GqsQrTAXuvQ4BMvwQJzroMV/caXLE= v-egbryz@o21'
+    sshKeySecureFile: 'sshnokey'
     addEntryToConfig: true
-    configHostAlias: 'test-alias'
+    configHostAlias: 'test-alias2'
     configUser: 'testuser'
     configHostname: 'github.com'
 
