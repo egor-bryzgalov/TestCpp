@@ -24,7 +24,7 @@ steps:
     addEntryToConfig: true
     configHostAlias: 'test-alias'
     configUser: 'testuser'
-    #configHostname: 'github.com'
+    configHostname: 'github.com'
 
 
 - task: InstallSSHKeym@0
@@ -35,9 +35,9 @@ steps:
     addEntryToConfig: true
     configHostAlias: 'test-alias2'
     configUser: 'testuser'
-    configHostname: 'github.com'
+    configHostname: 'google.com'
 
-- script: ssh user@test-alias
+- script: ssh user@test-alias2
 
 #- task: InstallSSHKey@0
 #  inputs:
