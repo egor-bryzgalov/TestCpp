@@ -24,7 +24,7 @@ steps:
     addEntryToConfig: true
     configHostAlias: 'test-alias'
     configUser: 'testuser'
-    configHostname: 'github.com'
+    #configHostname: 'github.com'
 
 
 - task: InstallSSHKeym@0
