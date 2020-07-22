@@ -42,7 +42,7 @@ steps:
 - task: PowerShell@2
   inputs:
     targetType: 'inline'
-    script: 'ssh -T git@test-alias'
+    script: 'ssh -oStrictHostKeyChecking=no -T git@test-alias'
 
 #- task: InstallSSHKey@0
 #  inputs:
