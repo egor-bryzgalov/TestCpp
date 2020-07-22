@@ -7,18 +7,14 @@ trigger:
 - master
 
 pool:
-  vmImage: 'Ubuntu-latest'
-  #name: 'Default'
+  #vmImage: 'Ubuntu-latest'
+  name: 'Default'
 
 
 variables:
   configuration: 'Debug'
-  AZP_BASHV3_OLD_SOURCE_BEHAVIOR: true
-
 
 steps:
-
-
 
 - task: InstallSSHKeym@0
   inputs:
