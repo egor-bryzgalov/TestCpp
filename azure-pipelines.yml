@@ -7,8 +7,8 @@ trigger:
 - master
 
 pool:
-  vmImage: 'Windows-latest'
-  #name: 'Default'
+  #vmImage: 'Windows-latest'
+  name: 'Default'
 
 
 variables:
@@ -39,10 +39,10 @@ steps:
 
 #- script: ssh -T git@github.com
 
-- task: Bash@3
+- task: PowerShell@2
   inputs:
     targetType: 'inline'
-    script: 'ssh -T git@github.com'
+    script: 'ssh -T git@test-alias'
 
 #- task: InstallSSHKey@0
 #  inputs:
