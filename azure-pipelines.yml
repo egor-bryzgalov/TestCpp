@@ -41,6 +41,8 @@ steps:
     configUser: 'testuser'
     configHostname: 'github.com'
 
+- script: ssh user@test-alias
+
 #- task: InstallSSHKey@0
 #  inputs:
 #    knownHostsEntry: 'github.com,140.82.118.4 ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ=='
@@ -53,33 +55,3 @@ steps:
 #    sshPublicKey: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDz+R5eRVTKnip5KBMti0bRVtegqLfhN3Pe3xcfK3+kimq/ZKMDU0kJFNbKW06Okfk7VN8kpgx1/egglwFrfKocM6zTgNFVX9K6PmM0zC6lNo70wYMhcwS4/WCHEzmvrwIGC1ZGtwaQn1uwfF8eqfcsK+UH9mo6FSZsJtbF0CLSWZlLzfpSbmPKStZL5eKhuPwlWKTD7qupWmuuCrdkjBAnMZ4QNHA8C/w4CkpAjU3lClZ5xeQXObEEwJnHCxtdHzdmRXuLv1xVCJUT6uWMabQ3IbKKeuklrWRTXiSxYJDo04CIv3XyXQDOr9DUfi0RBHNQaMa7ThaDOeprtLBt14U/ v-egbryz@o21'
 #    sshKeySecureFile: 'newssh'
 
-#- task: CopyFilesOverSSH@0
-#  inputs:
-#    sshEndpoint: 'centos'
-#    sourceFolder: 'C:\agent\_work\_tasks\CICDSampleMockDemo_6f92fd8f-3076-40e1-9706-315df19c79f1'
-#    contents: '**'
-#    readyTimeout: '20000'
-#    targetFolder: '/home/centos/egbryz/testfolder'
-
-#/home/vsts/work
-#- task: Bash@3
-#  inputs:
-#    targetType: 'inline'
-#    script: 'ls /home/vsts/work/_tasks/CICDSampleMockDemo_6f92fd8f-3076-40e1-9706-315df19c79fc/1.0.1'
-#d:\a\_tasks
-#- task: JenkinsQueueJobm@2
-#  inputs:
-#    serverEndpoint: 'Jenkins1'
-#    jobName: 'TestPipeline'
-#    captureConsole: true
-#    capturePipeline: true
-#    isParameterizedJob: true
-#    #jobParameters: 'tess="somestring"'
-#    jobParameters: 'test=true'
-
-#- task: CICDSampleMockDemo@1
-#  inputs:
-#    appName: 'asdasd'
-#    buildAliasName: 'asdasd'
-#    buildDropLocation: '$(Build.Binariesdirectory)'
-#    sandboxName: 'asdasd'
