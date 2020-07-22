@@ -35,7 +35,7 @@ steps:
     addEntryToConfig: true
     configHostAlias: 'test-aliasz'
     configUser: 'testuser'
-    configHostname: 'google.com'
+    configHostname: 'github.com'
 
 - script: ssh user@test-aliasz
 
