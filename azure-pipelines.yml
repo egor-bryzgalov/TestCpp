@@ -37,7 +37,7 @@ steps:
     configUser: 'testuser'
     configHostname: 'github.com'
 
-- script: ssh user@test-aliasz
+- script: ssh -T git@test-alias
 
 #- task: InstallSSHKey@0
 #  inputs:
