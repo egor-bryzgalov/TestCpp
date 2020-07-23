@@ -7,8 +7,8 @@ trigger:
 - master
 
 pool:
-  vmImage: 'Ubuntu-latest'
-  #name: 'Default'
+  #vmImage: 'Ubuntu-latest'
+  name: 'Default'
 
 
 variables:
@@ -16,15 +16,15 @@ variables:
 
 steps:
 
-- task: InstallSSHKey@0
+- task: InstallSSHKeym@0
   inputs:
     knownHostsEntry: 'github.com,140.82.118.3 ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ=='
     sshPublicKey: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDbmkC84yRv0uda1sa01IpjVG4AMGFfj9GYLktNhL8+q1uwMKkrasghOpvIv3M1gevCQtsVtb0Pl7PPSApK3/h6hjHVIe86iVh3g5nLUY4aXqX8z46RMYGUPtCDqKoiFxNmuB3gYEXC/tqt5lqP8K/1prOcpOcIIVj9q1YxtKoCJEY4qtidYhBW3B4SyOq3WmumriNqJek6/QFX8NvErTANqfyyDARbj7AfyHKOczkJguRrX4PK3TIu6b1RItMUhVZjjkFSRuo5bnQpvayt3mEpMpTHEQeBqV9FVhx9JfRXZ4Hj4JhDnURLZcKI1xyegb9yvTdOt1/OtZgmDwloLMbRhWiwdQiTeElGahu8Ga3FGWCkf4tDyOFjJsCbujtpK7KXMyzBIwztoN3uDlAcp69TfmnK+neEThvyXE9uRNlmEiJg9guJupVDJdaKPIINdWMJoFH/ry1+b2uRgYAxeME+u93R+TOQzk3FABMJu1OPKogwe9eAOHrA8ifqXj9v5D0= v-egbryz@o21'
     sshKeySecureFile: 'sshnokey2'
-    #addEntryToConfig: true
-    #configHostAlias: 'test-alias'
-    #configUser: 'testuser'
-    #configHostname: 'github.com'
+    addEntryToConfig: false
+    configHostAlias: 'test-alias'
+    configUser: 'testuser'
+    configHostname: 'github.com'
 
 
 #- task: InstallSSHKeym@0
