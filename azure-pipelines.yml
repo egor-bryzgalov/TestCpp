@@ -7,8 +7,8 @@ trigger:
 - master
 
 pool:
-  #vmImage: 'Ubuntu-latest'
-  name: 'Default'
+  vmImage: 'Ubuntu-latest'
+  #name: 'Default'
 
 
 variables:
@@ -32,7 +32,7 @@ steps:
     sshPublicKey: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC4FtRnl/TOUCEnZY0LzC38oLkmk3jaa5Kpp6MokbzXbxraxruZpEovBrMd5fE4mg13DsIjLqboc9880EpQUPlq4HRx/yipqkv1Z/FhL5WlBq7QQxuAo9KJuiE1xw5/w+MuB3giiDKjvkq03rkqYBbYjLsR/Xtt6Eh3sJcvhWt6HC9VPjQOPI2yNm6005wc178EIaARZpen+BcTUYqWjBSgFQeKD4ap9XKj+ixys8+7who1cm0pOQJpdVWTZ++55zt1xaz13dB5sIYPz7gXxrc/Np0MlppkaP16EvxUV1jETMl/h0k99pQQ1mHtJQxXEODsyNkqk86WQbN/etuZdfMl europe\v-egbryz@o21'
     sshKeySecureFile: 'sshwithkey'
     sshPassphrase: passphrase
-    addEntryToConfig: true
+    addEntryToConfig: false
     configHostAlias: 'test-alias'
     configUser: 'testuser'
     configHostname: 'github.com'
@@ -54,7 +54,7 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      ssh -oStrictHostKeyChecking=no -T git@test-alias
+      ssh -oStrictHostKeyChecking=no -T git@github.com
 
 
 #- task: InstallSSHKey@0
