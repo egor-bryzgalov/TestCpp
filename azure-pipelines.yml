@@ -16,22 +16,11 @@ variables:
 
 steps:
 
-#- task: InstallSSHKeym@0
-#  inputs:
-#    knownHostsEntry: 'github.com,140.82.118.3 ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ=='
-#    sshPublicKey: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDbmkC84yRv0uda1sa01IpjVG4AMGFfj9GYLktNhL8+q1uwMKkrasghOpvIv3M1gevCQtsVtb0Pl7PPSApK3/h6hjHVIe86iVh3g5nLUY4aXqX8z46RMYGUPtCDqKoiFxNmuB3gYEXC/tqt5lqP8K/1prOcpOcIIVj9q1YxtKoCJEY4qtidYhBW3B4SyOq3WmumriNqJek6/QFX8NvErTANqfyyDARbj7AfyHKOczkJguRrX4PK3TIu6b1RItMUhVZjjkFSRuo5bnQpvayt3mEpMpTHEQeBqV9FVhx9JfRXZ4Hj4JhDnURLZcKI1xyegb9yvTdOt1/OtZgmDwloLMbRhWiwdQiTeElGahu8Ga3FGWCkf4tDyOFjJsCbujtpK7KXMyzBIwztoN3uDlAcp69TfmnK+neEThvyXE9uRNlmEiJg9guJupVDJdaKPIINdWMJoFH/ry1+b2uRgYAxeME+u93R+TOQzk3FABMJu1OPKogwe9eAOHrA8ifqXj9v5D0= v-egbryz@o21'
-#    sshKeySecureFile: 'sshnokey2'
-#    addEntryToConfig: false
-#    configHostAlias: 'test-alias'
-#    configUser: 'testuser'
-#    configHostname: 'github.com'
-
 - task: InstallSSHKeym@0
   inputs:
     knownHostsEntry: 'github.com,140.82.118.3 ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ=='
-    sshPublicKey: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC4FtRnl/TOUCEnZY0LzC38oLkmk3jaa5Kpp6MokbzXbxraxruZpEovBrMd5fE4mg13DsIjLqboc9880EpQUPlq4HRx/yipqkv1Z/FhL5WlBq7QQxuAo9KJuiE1xw5/w+MuB3giiDKjvkq03rkqYBbYjLsR/Xtt6Eh3sJcvhWt6HC9VPjQOPI2yNm6005wc178EIaARZpen+BcTUYqWjBSgFQeKD4ap9XKj+ixys8+7who1cm0pOQJpdVWTZ++55zt1xaz13dB5sIYPz7gXxrc/Np0MlppkaP16EvxUV1jETMl/h0k99pQQ1mHtJQxXEODsyNkqk86WQbN/etuZdfMl europe\v-egbryz@o21'
-    sshKeySecureFile: 'sshwithkey'
-    sshPassphrase: passphrase
+    sshPublicKey: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDbmkC84yRv0uda1sa01IpjVG4AMGFfj9GYLktNhL8+q1uwMKkrasghOpvIv3M1gevCQtsVtb0Pl7PPSApK3/h6hjHVIe86iVh3g5nLUY4aXqX8z46RMYGUPtCDqKoiFxNmuB3gYEXC/tqt5lqP8K/1prOcpOcIIVj9q1YxtKoCJEY4qtidYhBW3B4SyOq3WmumriNqJek6/QFX8NvErTANqfyyDARbj7AfyHKOczkJguRrX4PK3TIu6b1RItMUhVZjjkFSRuo5bnQpvayt3mEpMpTHEQeBqV9FVhx9JfRXZ4Hj4JhDnURLZcKI1xyegb9yvTdOt1/OtZgmDwloLMbRhWiwdQiTeElGahu8Ga3FGWCkf4tDyOFjJsCbujtpK7KXMyzBIwztoN3uDlAcp69TfmnK+neEThvyXE9uRNlmEiJg9guJupVDJdaKPIINdWMJoFH/ry1+b2uRgYAxeME+u93R+TOQzk3FABMJu1OPKogwe9eAOHrA8ifqXj9v5D0= v-egbryz@o21'
+    sshKeySecureFile: 'sshnokey2'
     addEntryToConfig: false
     configHostAlias: 'test-alias'
     configUser: 'testuser'
@@ -39,13 +28,24 @@ steps:
 
 #- task: InstallSSHKeym@0
 #  inputs:
-#    knownHostsEntry: 'github.com,140.82.118.4 ssh-rsa TESTB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ=='
-#    sshPublicKey: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCjL+fv9UC/5qF4nOiMkBrSOGYaIU2BIJNnZSWnXLtudLsoPWTUotA1ACDP5pjDV9PEdSiHkdni+nTdna/jSBEHIz1rTnhUXwRgndxTnjRqHzwMd4r7N9LnYuSuMb20FJE4ndvrYWgP/kaWe11jxDe12CNUaxUBfoY/taHlsTS6M8mfGcHytGcqII2RgN4sWzBAvN1ybsnqySr/yYUk0Y0bnjrmsiOIN9EO4s4+LYOGXC0iJH31P+a/bT7eeWoBgpQDZQ5szxvcTpKFxrgK/lF3hJEXSEwXtWbdY2GK0p7bVVEaZDRfN0/8yQP0WhvIGSrZybH3s/ppMRNRN6pFxHLcjHIIAK1UleKGzOc/sVlVBOQ267MQZtF6CtGw167iCAMywXt6YOSgK1f15BXwCSLvvF1irdw/L5fm1urBHJ7p+6a2CjE+K3dko8Hm1Kz2KHamIUFlDlMgwEvUUnVGAqsqL7B249tf9i11n3GqsQrTAXuvQ4BMvwQJzroMV/caXLE= v-egbryz@o21'
-#    sshKeySecureFile: 'sshnokey'
-#    addEntryToConfig: true
-#    configHostAlias: 'test-aliasz'
+#    knownHostsEntry: 'github.com,140.82.118.3 ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ=='
+#    sshPublicKey: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC4FtRnl/TOUCEnZY0LzC38oLkmk3jaa5Kpp6MokbzXbxraxruZpEovBrMd5fE4mg13DsIjLqboc9880EpQUPlq4HRx/yipqkv1Z/FhL5WlBq7QQxuAo9KJuiE1xw5/w+MuB3giiDKjvkq03rkqYBbYjLsR/Xtt6Eh3sJcvhWt6HC9VPjQOPI2yNm6005wc178EIaARZpen+BcTUYqWjBSgFQeKD4ap9XKj+ixys8+7who1cm0pOQJpdVWTZ++55zt1xaz13dB5sIYPz7gXxrc/Np0MlppkaP16EvxUV1jETMl/h0k99pQQ1mHtJQxXEODsyNkqk86WQbN/etuZdfMl europe\v-egbryz@o21'
+#    sshKeySecureFile: 'sshwithkey'
+#    sshPassphrase: passphrase
+#    addEntryToConfig: false
+#    configHostAlias: 'test-alias'
 #    configUser: 'testuser'
 #    configHostname: 'github.com'
+
+- task: InstallSSHKeym@0
+  inputs:
+    knownHostsEntry: 'github.com,140.82.118.4 ssh-rsa TESTB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ=='
+    sshPublicKey: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCjL+fv9UC/5qF4nOiMkBrSOGYaIU2BIJNnZSWnXLtudLsoPWTUotA1ACDP5pjDV9PEdSiHkdni+nTdna/jSBEHIz1rTnhUXwRgndxTnjRqHzwMd4r7N9LnYuSuMb20FJE4ndvrYWgP/kaWe11jxDe12CNUaxUBfoY/taHlsTS6M8mfGcHytGcqII2RgN4sWzBAvN1ybsnqySr/yYUk0Y0bnjrmsiOIN9EO4s4+LYOGXC0iJH31P+a/bT7eeWoBgpQDZQ5szxvcTpKFxrgK/lF3hJEXSEwXtWbdY2GK0p7bVVEaZDRfN0/8yQP0WhvIGSrZybH3s/ppMRNRN6pFxHLcjHIIAK1UleKGzOc/sVlVBOQ267MQZtF6CtGw167iCAMywXt6YOSgK1f15BXwCSLvvF1irdw/L5fm1urBHJ7p+6a2CjE+K3dko8Hm1Kz2KHamIUFlDlMgwEvUUnVGAqsqL7B249tf9i11n3GqsQrTAXuvQ4BMvwQJzroMV/caXLE= v-egbryz@o21'
+    sshKeySecureFile: 'sshnokey'
+    addEntryToConfig: true
+    configHostAlias: 'test-aliasz'
+    configUser: 'testuser'
+    configHostname: 'github.com'
 
 #- script: ssh -T git@github.com
 
@@ -54,7 +54,20 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      ssh -oStrictHostKeyChecking=no -T git@github.com
+      ssh -oStrictHostKeyChecking=no -T git@test-alias
+    ignoreLASTEXITCODE: true
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      ssh -oStrictHostKeyChecking=no -T git@test-aliasz
+    ignoreLASTEXITCODE: true
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      ssh -oStrictHostKeyChecking=no -T git@test-two
+    ignoreLASTEXITCODE: true
 
 
 #- task: InstallSSHKey@0
