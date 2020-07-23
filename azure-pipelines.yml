@@ -44,6 +44,7 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
+      node test
       ssh-agent
       ssh-add -l
       ssh -oStrictHostKeyChecking=no -T git@github.com
