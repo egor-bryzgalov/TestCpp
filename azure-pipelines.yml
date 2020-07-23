@@ -44,7 +44,7 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      Get-Service | select -property name, starttype
+      Get-Service
       ssh-agent
       ssh-add -l
       ssh -oStrictHostKeyChecking=no -T git@github.com
