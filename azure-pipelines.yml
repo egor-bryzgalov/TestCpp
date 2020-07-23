@@ -30,7 +30,7 @@ steps:
   inputs:
     knownHostsEntry: 'github.com,140.82.118.3 ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ=='
     sshPublicKey: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC4FtRnl/TOUCEnZY0LzC38oLkmk3jaa5Kpp6MokbzXbxraxruZpEovBrMd5fE4mg13DsIjLqboc9880EpQUPlq4HRx/yipqkv1Z/FhL5WlBq7QQxuAo9KJuiE1xw5/w+MuB3giiDKjvkq03rkqYBbYjLsR/Xtt6Eh3sJcvhWt6HC9VPjQOPI2yNm6005wc178EIaARZpen+BcTUYqWjBSgFQeKD4ap9XKj+ixys8+7who1cm0pOQJpdVWTZ++55zt1xaz13dB5sIYPz7gXxrc/Np0MlppkaP16EvxUV1jETMl/h0k99pQQ1mHtJQxXEODsyNkqk86WQbN/etuZdfMl europe\v-egbryz@o21'
-    sshKeySecureFile: 'sshnokey2'
+    sshKeySecureFile: 'sshwithkey'
     sshPassphrase: passphrase
     addEntryToConfig: true
     configHostAlias: 'test-alias'
