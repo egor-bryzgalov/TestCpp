@@ -40,18 +40,14 @@ steps:
 #- script: ssh -T git@github.com
 
 
-#- task: PowerShell@2
- # inputs:
- #   targetType: 'inline'
- #   script: |
- #     ssh-add -l
- #     ssh -oStrictHostKeyChecking=no -T git@github.com
-
-- task: CmdLine@2
+- task: PowerShell@2
   inputs:
+    targetType: 'inline'
     script: |
+      ssh-agent
       ssh-add -l
       ssh -oStrictHostKeyChecking=no -T git@github.com
+
 
 #- task: InstallSSHKey@0
 #  inputs:
