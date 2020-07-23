@@ -25,7 +25,6 @@ steps:
     configHostAlias: 'test-alias'
     configUser: 'testuser'
     configHostname: 'github.com'
-    preserveConfig: false
 
 #- task: InstallSSHKeym@0
 #  inputs:
