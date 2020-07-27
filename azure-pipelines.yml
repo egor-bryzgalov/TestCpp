@@ -83,6 +83,6 @@ steps:
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: './Artifacts'
+    PathtoPublish: 'C:\agent\_work\2\s'
     ArtifactName: 'drop'
     publishLocation: 'Container'
