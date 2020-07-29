@@ -7,8 +7,8 @@ trigger:
 - master
 
 pool:
-  #vmImage: 'Ubuntu-latest'
-  name: 'Default'
+  vmImage: 'Windows-latest'
+  #name: 'Default'
 
 
 variables:
@@ -49,24 +49,6 @@ steps:
 
 #- script: ssh -T git@github.com
 
-- task: PowerShell@2
-  inputs:
-    targetType: 'inline'
-    script: |
-      ssh -oStrictHostKeyChecking=no -T git@test-alias
-    ignoreLASTEXITCODE: true
-- task: PowerShell@2
-  inputs:
-    targetType: 'inline'
-    script: |
-      ssh -oStrictHostKeyChecking=no -T git@test-aliasz
-    ignoreLASTEXITCODE: true
-- task: PowerShell@2
-  inputs:
-    targetType: 'inline'
-    script: |
-      ssh -oStrictHostKeyChecking=no -T git@three
-    ignoreLASTEXITCODE: true
 
 
 #- task: InstallSSHKey@0
