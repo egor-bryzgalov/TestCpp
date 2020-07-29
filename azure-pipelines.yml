@@ -70,7 +70,8 @@ steps:
 
 - task: ArchiveFiles@2
   inputs:
-    rootFolderOrFile: 'C:\agent\_work\2\s'
+    #rootFolderOrFile: 'C:\agent\_work\2\s'
+    rootFolderOrFile: 'd:\a\1\s'
     includeRootFolder: true
     archiveType: 'zip'
     archiveFile: 'C:\agent\_work\2\s\archive.zip'
