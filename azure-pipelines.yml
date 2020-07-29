@@ -100,3 +100,4 @@ steps:
     PathtoPublish: 'C:\agent\_work\2\s\archive.zip'
     ArtifactName: 'drop'
     publishLocation: 'Container'
+    TargetPath: 'C:\agent\_work\2\archive.zip'
