@@ -7,13 +7,13 @@ trigger:
 - master
 
 pool:
-  vmImage: 'Windows-latest'
-  #name: 'Default'
+  #vmImage: 'Windows-latest'
+  name: 'Default'
 
 
 variables:
   configuration: 'Debug'
-  Build.ArtifactStagingDirectory: 'D:/a/1/s/test'
+  Build.ArtifactStagingDirectory: 'C:/localagent/_work/1/s/test'
 
 steps:
 
@@ -88,7 +88,7 @@ steps:
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: 'D:/a/1/s'
+    PathtoPublish: 'C:/localagent/_work/1/s'
     ArtifactName: 'drop'
     publishLocation: 'Container'
 
