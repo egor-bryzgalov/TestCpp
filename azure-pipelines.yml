@@ -7,8 +7,8 @@ trigger:
 - master
 
 pool:
-  vmImage: 'Windows-latest'
-  #name: 'Default'
+  #vmImage: 'Windows-latest'
+  name: 'Default'
 
 
 variables:
@@ -68,25 +68,20 @@ steps:
 #    artifact: 'PipelineItem'
 #    publishLocation: 'pipeline'
 
-- task: ArchiveFiles@2
-  inputs:
-    #rootFolderOrFile: 'C:\agent\_work\2\s'
-    rootFolderOrFile: 'd:\a\1\s'
-    includeRootFolder: true
-    archiveType: 'zip'
-    archiveFile: 'C:\agent\_work\2\s\archive.zip'
-    replaceExistingArchive: true
-    verbose: true
-
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: 'C:\agent\_work\2\s\archive.zip'
-    ArtifactName: 'drop'
-    publishLocation: 'Container'
-    TargetPath: 'C:\agent\_work\2\archive.zip'
+#- task: ArchiveFiles@2
+#  inputs:
+#    #rootFolderOrFile: 'C:\agent\_work\2\s'
+#    rootFolderOrFile: 'd:\a\1\s'
+#    includeRootFolder: true
+#    archiveType: 'zip'
+##    archiveFile: 'C:\agent\_work\2\s\archive.zip'
+ #   replaceExistingArchive: true
+ #   verbose: true
 
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: 'C:\agent\_work\2\s'
-    ArtifactName: 'Artifact'
+    ArtifactName: 'drop'
     publishLocation: 'Container'
+
+
