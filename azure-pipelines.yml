@@ -90,4 +90,3 @@ steps:
     PathtoPublish: 'C:\agent\_work\2\s'
     ArtifactName: 'Artifact'
     publishLocation: 'Container'
-    TargetPath: 'C:\agent\_work\2\archive.zip'
