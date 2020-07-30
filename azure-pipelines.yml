@@ -13,6 +13,7 @@ pool:
 
 variables:
   configuration: 'Debug'
+  Build.ArtifactStagingDirectory: 'D:/a/1/s/test'
 
 steps:
 
