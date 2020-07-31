@@ -89,7 +89,8 @@ steps:
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '\\fs\Public\egor.bryzgalov'
+    PathtoPublish: 'C:/localagent/_work/1/s/art.zip'
+    TargetPath: '\\fs\Public\egor.bryzgalov'
     ArtifactName: 'drop'
     publishLocation: 'Container'
 
