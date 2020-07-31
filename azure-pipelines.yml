@@ -92,4 +92,4 @@ steps:
     PathtoPublish: 'C:/localagent/_work/1/s/art.zip'
     ArtifactName: 'drop'
     publishLocation: 'FilePath'
-    TargetPath: '\\fs\Public\egor.bryzgalov'
+    TargetPath: 'C:\localagent\_work\_temp'
