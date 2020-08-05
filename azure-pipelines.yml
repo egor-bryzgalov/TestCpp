@@ -81,10 +81,10 @@ steps:
 
 - task: ArchiveFiles@2
   inputs:
-    rootFolderOrFile: 'C:/localagent/_work/1/s'
+    rootFolderOrFile: 'C:\localagent\_work\1\s'
     includeRootFolder: true
     archiveType: 'zip'
-    archiveFile: 'C:/localagent/_work/1/s/art.zip'
+    archiveFile: 'C:\localagent\_work\1\s\art.zip'
     replaceExistingArchive: true
 
 - task: PublishBuildArtifacts@1
