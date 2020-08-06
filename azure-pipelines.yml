@@ -91,5 +91,5 @@ steps:
   inputs:
     PathtoPublish: 'C:\localagent\_work\1\s\art.zip'
     ArtifactName: 'LowerCase'
-    publishLocation: 'FilePath'
-    TargetPath: 'C:\localagent\_work\_newtemp'
+    publishLocation: 'Container'
+    #TargetPath: 'C:\localagent\_work\_newtemp'
