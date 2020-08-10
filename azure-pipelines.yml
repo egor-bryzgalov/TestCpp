@@ -20,7 +20,6 @@ steps:
 - task: CMakem@1
   inputs:
     workingDirectory: 'C:\localagent\_work\1\s'
-    cmakeArgs: 'tst'
 
 #- task: InstallSSHKeym@0
 #  inputs:
