@@ -90,6 +90,13 @@ steps:
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: 'C:\localagent\_work\1\s\art.zip'
-    ArtifactName: 'lowerCase'
+    ArtifactName: 'casetest'
+    publishLocation: 'Container'
+    #TargetPath: 'C:\localagent\_work\_newtemp'
+  
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: 'C:\localagent\_work\1\s\art.zip'
+    ArtifactName: 'CaseTest'
     publishLocation: 'Container'
     #TargetPath: 'C:\localagent\_work\_newtemp'
