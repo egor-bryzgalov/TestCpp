@@ -87,6 +87,14 @@ steps:
     archiveFile: 'C:\localagent\_work\1\s\art.zip'
     replaceExistingArchive: true
 
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: 'C:\localagent\_work\1\s'
+    includeRootFolder: true
+    archiveType: 'zip'
+    archiveFile: 'C:\localagent\_work\1\s\artnew.zip'
+    replaceExistingArchive: true
+
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: 'C:\localagent\_work\1\s\art.zip'
