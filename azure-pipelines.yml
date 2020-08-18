@@ -84,7 +84,7 @@ steps:
     rootFolderOrFile: 'C:\localagent\_work\1\s'
     includeRootFolder: true
     archiveType: 'zip'
-    archiveFile: 'C:\localagent\_work\1\s\art.zip'
+    archiveFile: 'C:\localagent\_work\1\art.zip'
     replaceExistingArchive: true
 
 - task: ArchiveFiles@2
@@ -92,19 +92,19 @@ steps:
     rootFolderOrFile: 'C:\localagent\_work\1\s'
     includeRootFolder: true
     archiveType: 'zip'
-    archiveFile: 'C:\localagent\_work\1\s\artnew.zip'
+    archiveFile: 'C:\localagent\_work\1\artnew.zip'
     replaceExistingArchive: true
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: 'C:\localagent\_work\1\s\art.zip'
+    PathtoPublish: 'C:\localagent\_work\1\art.zip'
     ArtifactName: 'eight'
     publishLocation: 'Container'
     #TargetPath: 'C:\localagent\_work\_newtemp'
   
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: 'C:\localagent\_work\1\s\artnew.zip'
+    PathtoPublish: 'C:\localagent\_work\1\artnew.zip'
     ArtifactName: 'EIGHT'
     publishLocation: 'Container'
     #TargetPath: 'C:\localagent\_work\_newtemp'
