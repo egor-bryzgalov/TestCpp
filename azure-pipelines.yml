@@ -105,6 +105,6 @@ steps:
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: 'C:\localagent\_work\1\artnew.zip'
-    ArtifactName: 'One'
+    ArtifactName: 'ONE'
     publishLocation: 'Container'
     #TargetPath: 'C:\localagent\_work\_newtemp'
