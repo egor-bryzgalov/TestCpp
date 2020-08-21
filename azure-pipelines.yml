@@ -98,13 +98,13 @@ steps:
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: 'C:\localagent\_work\1\art.zip'
-    ArtifactName: 'two'
+    ArtifactName: 'three'
     publishLocation: 'Container'
     #TargetPath: 'C:\localagent\_work\_newtemp'
   
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: 'C:\localagent\_work\1\art.zip'
-    ArtifactName: 'TWO'
+    ArtifactName: 'new'
     publishLocation: 'Container'
     #TargetPath: 'C:\localagent\_work\_newtemp'
