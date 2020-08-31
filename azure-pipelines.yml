@@ -17,6 +17,8 @@ variables:
 
 steps:
 
+- script: 'node --version'
+
 - task: CopyFilesOverSSH@0
   inputs:
     sshEndpoint: 'ssh local admin'
