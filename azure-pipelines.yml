@@ -24,7 +24,7 @@ steps:
     contents: 'test.txt'
     targetFolder: '\\fs\Public\egor.bryzgalov\test'
     isWindowsOnTarget: true
-    cleanTargetFolder: true
+    cleanTargetFolder: false
     readyTimeout: '20000'
 
 #- task: ArchiveFiles@2
