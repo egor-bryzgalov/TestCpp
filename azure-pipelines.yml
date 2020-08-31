@@ -22,7 +22,7 @@ steps:
     sshEndpoint: 'ssh local admin'
     sourceFolder: 'D:\Test\'
     contents: 'test.txt'
-    targetFolder: 'D:\Test\target'
+    targetFolder: '\\localhost\d$\Test\target'
     isWindowsOnTarget: true
     cleanTargetFolder: true
     readyTimeout: '20000'
