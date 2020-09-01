@@ -26,7 +26,7 @@ steps:
     #targetFolder: 'D:\Test\target'
     #targetFolder: '\\localhost\d$\Test\target'
     isWindowsOnTarget: true
-    cleanTargetFolder: true
+    cleanTargetFolder: false
     readyTimeout: '20000'
     overwrite: true
 
