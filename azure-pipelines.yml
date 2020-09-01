@@ -25,7 +25,7 @@ steps:
     #targetFolder: '\\fs\Public\egor.bryzgalov\test'
     targetFolder: 'D:\Test\target'
     isWindowsOnTarget: true
-    cleanTargetFolder: false
+    cleanTargetFolder: true
     readyTimeout: '20000'
     overwrite: false
 
