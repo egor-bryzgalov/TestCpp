@@ -19,42 +19,42 @@ steps:
 
 - script: 'node --version'
 
-- task: CopyFilesOverSSH@0
+#- task: CopyFilesOverSSH@0
+#  inputs:
+#    sshEndpoint: 'ssh local admin'
+#    sourceFolder: 'D:\Test\'
+#    contents: 'test.txt'
+#    targetFolder: '\\fs\Public\egor.bryzgalov\test'
+#    isWindowsOnTarget: true
+#    cleanTargetFolder: false
+#    readyTimeout: '20000'
+
+- task: ArchiveFiles@2
   inputs:
-    sshEndpoint: 'ssh local admin'
-    sourceFolder: 'D:\Test\'
-    contents: 'test.txt'
-    targetFolder: '\\fs\Public\egor.bryzgalov\test'
-    isWindowsOnTarget: true
-    cleanTargetFolder: false
-    readyTimeout: '20000'
+    rootFolderOrFile: 'C:\localagent\_work\1\s'
+    includeRootFolder: true
+    archiveType: 'zip'
+    archiveFile: 'C:\localagent\_work\1\art.zip'
+    replaceExistingArchive: true
 
-#- task: ArchiveFiles@2
-#  inputs:
-#    rootFolderOrFile: 'C:\localagent\_work\1\s'
-#    includeRootFolder: true
-#    archiveType: 'zip'
-#    archiveFile: 'C:\localagent\_work\1\art.zip'
-#    replaceExistingArchive: true
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: 'C:\localagent\_work\1\s'
+    includeRootFolder: true
+    archiveType: 'zip'
+    archiveFile: 'C:\localagent\_work\1\artnew.zip'
+    replaceExistingArchive: true
 
-#- task: ArchiveFiles@2
-#  inputs:
-#    rootFolderOrFile: 'C:\localagent\_work\1\s'
-#    includeRootFolder: true
-#    archiveType: 'zip'
-#    archiveFile: 'C:\localagent\_work\1\artnew.zip'
-#    replaceExistingArchive: true
-
-#- task: PublishBuildArtifacts@1
-#  inputs:
-#    PathtoPublish: 'C:\localagent\_work\1\art.zip'
-#    ArtifactName: 'one'
-#    publishLocation: 'Container'
-    #TargetPath: 'C:\localagent\_work\_newtemp'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: 'C:\localagent\_work\1\art.zip'
+    ArtifactName: 'one'
+    publishLocation: 'Container'
+    TargetPath: 'C:\localagent\_work\_newtemp'
   
 #- task: PublishBuildArtifacts@1
 #  inputs:
 #    PathtoPublish: 'C:\localagent\_work\1\artnew.zip'
 #    ArtifactName: 'ONE'
 #    publishLocation: 'Container'
-#    #TargetPath: 'C:\localagent\_work\_newtemp'
+#    TargetPath: 'C:\localagent\_work\_newtemp'
