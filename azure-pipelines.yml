@@ -24,8 +24,8 @@ steps:
     contents: 'test.txt'
     #targetFolder: '\\fs\Public\egor.bryzgalov\test'
     targetFolder: 'D:\Test\target'
-    isWindowsOnTarget: false
-    cleanTargetFolder: true
+    isWindowsOnTarget: true
+    cleanTargetFolder: false
     readyTimeout: '20000'
     overwrite: false
 
