@@ -22,13 +22,13 @@ steps:
     sshEndpoint: 'ssh local admin'
     sourceFolder: 'D:\Test\'
     contents: 'test.txt'
-    #targetFolder: '\\fs\Public\egor.bryzgalov\test'
+    targetFolder: '\\fs\Public\egor.bryzgalov\test'
     #targetFolder: 'D:\Test\target'
-    targetFolder: '\\localhost\d$\Test\target'
+    #targetFolder: '\\localhost\d$\Test\target'
     isWindowsOnTarget: true
     cleanTargetFolder: true
     readyTimeout: '20000'
-    overwrite: false
+    overwrite: true
 
 #- task: ArchiveFiles@2
 #  inputs:
