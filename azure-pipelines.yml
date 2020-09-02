@@ -19,7 +19,8 @@ steps:
 
 - task: CopyFilesOverSSH@0
   inputs:
-    sshEndpoint: 'ssh local admin'
+    #sshEndpoint: 'ssh local admin'
+    sshEndpoint: 'SSH local v-alias'
     sourceFolder: 'D:\Test\'
     contents: 'test.txt'
     #targetFolder: '\\10.0.0.140\Public\egor.bryzgalov\test'
