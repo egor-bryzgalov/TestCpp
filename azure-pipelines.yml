@@ -21,7 +21,7 @@ steps:
   inputs:
     sshEndpoint: 'SSH local v-alias'
     runOptions: 'commands'
-    commands: 'whoami'
+    commands: 'dir \\fs\Public\egor.bryzgalov'
     readyTimeout: '20000'
 
 - task: CopyFilesOverSSH@0
