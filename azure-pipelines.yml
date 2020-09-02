@@ -17,6 +17,13 @@ variables:
 
 steps:
 
+- task: SSH@0
+  inputs:
+    sshEndpoint: 'SSH local v-alias'
+    runOptions: 'commands'
+    commands: 'dir \\fs\Public\egor.bryzgalov'
+    readyTimeout: '20000'
+
 - task: CopyFilesOverSSH@0
   inputs:
     #sshEndpoint: 'ssh local admin'
