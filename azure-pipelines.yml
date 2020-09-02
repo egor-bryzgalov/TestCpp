@@ -30,8 +30,8 @@ steps:
     sshEndpoint: 'SSH local v-alias'
     sourceFolder: 'D:\Test\'
     contents: 'test.txt'
-    #targetFolder: '\\10.0.0.140\Public\egor.bryzgalov\test'
-    targetFolder: 'Z:\egor.bryzgalov\test'
+    targetFolder: '\\fs\Public\egor.bryzgalov\test'
+    #targetFolder: 'Z:\egor.bryzgalov\test'
     #targetFolder: '\\localhost\d$\Test\target'
     isWindowsOnTarget: true
     cleanTargetFolder: true
