@@ -23,8 +23,8 @@ steps:
     sourceFolder: 'D:\Test\'
     contents: 'test.txt'
     #targetFolder: '\\10.0.0.140\Public\egor.bryzgalov\test'
-    #targetFolder: 'D:\Test\target'
-    targetFolder: '\\localhost\d$\Test\target'
+    targetFolder: 'Z:\egor.bryzgalov\test'
+    #targetFolder: '\\localhost\d$\Test\target'
     isWindowsOnTarget: true
     cleanTargetFolder: true
     readyTimeout: '20000'
