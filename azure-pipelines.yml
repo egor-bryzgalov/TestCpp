@@ -20,7 +20,7 @@ steps:
 - task: CopyFilesOverSSH@0
   inputs:
     sshEndpoint: 'ssh local admin'
-    sourceFolder: 'D:\Test\'
+    sourceFolder: 'C:\agent\Test\'
     contents: 'test.txt'
     targetFolder: '\\fs\Public\egor.bryzgalov\test'
     #targetFolder: 'D:\Test\target'
