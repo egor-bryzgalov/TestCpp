@@ -21,7 +21,7 @@ steps:
   inputs:
     sshEndpoint: 'SSH local v-alias'
     runOptions: 'commands'
-    commands: 'dir \\fs\Public\egor.bryzgalov'
+    commands: 'dir \\Products\Public'
     readyTimeout: '20000'
 
 - task: CopyFilesOverSSH@0
