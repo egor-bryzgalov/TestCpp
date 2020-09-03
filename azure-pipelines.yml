@@ -7,8 +7,8 @@ trigger:
 - master
 
 pool:
-  #vmImage: 'Windows-latest'
-  name: 'Default'
+  vmImage: 'Windows-latest'
+  #name: 'Default'
 
 
 variables:
@@ -17,26 +17,30 @@ variables:
 
 steps:
 
-- task: SSH@0
+- task: CmdLine@2
   inputs:
-    sshEndpoint: 'SSH local v-alias'
-    runOptions: 'commands'
-    commands: 'dir \\Products\Public'
-    readyTimeout: '20000'
+    script: 'cd'
 
-- task: CopyFilesOverSSH@0
-  inputs:
-    #sshEndpoint: 'ssh local admin'
-    sshEndpoint: 'SSH local v-alias'
-    sourceFolder: 'D:\Test\'
-    contents: 'test.txt'
-    targetFolder: '\\fs\Public\egor.bryzgalov\test'
-    #targetFolder: 'Z:\egor.bryzgalov\test'
-    #targetFolder: '\\localhost\d$\Test\target'
-    isWindowsOnTarget: true
-    cleanTargetFolder: true
-    readyTimeout: '20000'
-    overwrite: true
+#- task: SSH@0
+#  inputs:
+#    sshEndpoint: 'SSH local v-alias'
+#    runOptions: 'commands'
+#    commands: 'dir \\Products\Public'
+#    readyTimeout: '20000'
+
+#- task: CopyFilesOverSSH@0
+#  inputs:
+#    #sshEndpoint: 'ssh local admin'
+#    sshEndpoint: 'SSH local v-alias'
+#    sourceFolder: 'D:\Test\'
+#    contents: 'test.txt'
+#    targetFolder: '\\fs\Public\egor.bryzgalov\test'
+#    #targetFolder: 'Z:\egor.bryzgalov\test'
+#    #targetFolder: '\\localhost\d$\Test\target'
+#    isWindowsOnTarget: true
+#    cleanTargetFolder: true
+#    readyTimeout: '20000'
+#    overwrite: true
 
 #- task: ArchiveFiles@2
 #  inputs:
