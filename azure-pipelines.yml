@@ -7,8 +7,8 @@ trigger:
 - master
 
 pool:
-  vmImage: 'Windows-latest'
-  #name: 'Default'
+  #vmImage: 'Windows-latest'
+  name: 'Default'
 
 
 variables:
@@ -16,10 +16,17 @@ variables:
   Build.ArtifactStagingDirectory: 'C:/localagent/_work/1/s/test'
 
 steps:
-
-- task: CmdLine@2
+- task: Mavenm@3
   inputs:
-    script: 'cd'
+    mavenPomFile: 'D:\Test\Maven\DeepSpace\pom.xml'
+    publishJUnitResults: true
+    testResultsFiles: 'D:\Test\Maven\surefire-reports\TEST-*.xml'
+    codeCoverageToolOption: 'Cobertura'
+    javaHomeOption: 'JDKVersion'
+    mavenVersionOption: 'Default'
+    mavenAuthenticateFeed: false
+    effectivePomSkip: false
+    sonarQubeRunAnalysis: false
 
 #- task: SSH@0
 #  inputs:
