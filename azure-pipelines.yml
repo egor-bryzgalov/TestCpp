@@ -16,17 +16,17 @@ variables:
   Build.ArtifactStagingDirectory: 'C:/localagent/_work/1/s/test'
 
 steps:
-- task: Mavenm@3
-  inputs:
-    mavenPomFile: 'D:\Test\Maven\DeepSpace\pom.xml'
-    publishJUnitResults: true
-    testResultsFiles: 'D:\Test\Maven\surefire-reports\TEST-*.xml'
-    codeCoverageToolOption: 'Cobertura'
-    javaHomeOption: 'JDKVersion'
-    mavenVersionOption: 'Default'
-    mavenAuthenticateFeed: false
-    effectivePomSkip: false
-    sonarQubeRunAnalysis: false
+#- task: Mavenm@3
+#  inputs:
+#    mavenPomFile: 'D:\Test\Maven\DeepSpace\pom.xml'
+#    publishJUnitResults: true
+#    testResultsFiles: 'D:\Test\Maven\surefire-reports\TEST-*.xml'
+#    codeCoverageToolOption: 'Cobertura'
+#    javaHomeOption: 'JDKVersion'
+##    mavenVersionOption: 'Default'
+ #   mavenAuthenticateFeed: false
+ #   effectivePomSkip: false
+ #   sonarQubeRunAnalysis: false
 
 #- task: SSH@0
 #  inputs:
@@ -49,32 +49,32 @@ steps:
 #    readyTimeout: '20000'
 #    overwrite: true
 
-#- task: ArchiveFiles@2
-#  inputs:
-#    rootFolderOrFile: 'C:\localagent\_work\1\s'
-#    includeRootFolder: true
-#    archiveType: 'zip'
-#    archiveFile: 'C:\localagent\_work\1\art.zip'
-#    replaceExistingArchive: true
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: 'C:\localagent\_work\1\s'
+    includeRootFolder: true
+    archiveType: 'zip'
+    archiveFile: 'C:\localagent\_work\1\art.zip'
+    replaceExistingArchive: true
 
-#- task: ArchiveFiles@2
-#  inputs:
-#    rootFolderOrFile: 'C:\localagent\_work\1\s'
-#    includeRootFolder: true
-#    archiveType: 'zip'
-#    archiveFile: 'C:\localagent\_work\1\artnew.zip'
-#    replaceExistingArchive: true
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: 'C:\localagent\_work\1\s'
+    includeRootFolder: true
+    archiveType: 'zip'
+    archiveFile: 'C:\localagent\_work\1\artnew.zip'
+    replaceExistingArchive: true
 
-#- task: PublishBuildArtifacts@1
-#  inputs:
-#    PathtoPublish: 'C:\localagent\_work\1\art.zip'
-#    ArtifactName: 'One'
-#    publishLocation: 'Container'
-#    TargetPath: 'C:\localagent\_work\_newtemp'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: 'C:\localagent\_work\1\art.zip'
+    ArtifactName: 'One'
+    publishLocation: 'Container'
+    TargetPath: 'C:\localagent\_work\_newtemp'
   
-#- task: PublishBuildArtifacts@1
-#  inputs:
-#    PathtoPublish: 'C:\localagent\_work\1\artnew.zip'
-#    ArtifactName: 'ONE'
-#    publishLocation: 'Container'
-#    TargetPath: 'C:\localagent\_work\_newtemp'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: 'C:\localagent\_work\1\artnew.zip'
+    ArtifactName: 'ONE'
+    publishLocation: 'Container'
+    TargetPath: 'C:\localagent\_work\_newtemp'
