@@ -23,7 +23,7 @@ steps:
     #testResultsFiles: 'D:\Test\Maven\surefire-reports\TEST-*.xml'
     #codeCoverageToolOption: 'Cobertura'
     javaHomeOption: 'JDKVersion'
-    jdkVersionOption: 14
+    jdkVersionOption: 1.7
     mavenVersionOption: 'Default'
     mavenAuthenticateFeed: false
     effectivePomSkip: false
