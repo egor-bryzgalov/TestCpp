@@ -16,17 +16,17 @@ variables:
   Build.ArtifactStagingDirectory: 'C:/localagent/_work/1/s/test'
 
 steps:
-#- task: Mavenm@3
-#  inputs:
-#    mavenPomFile: 'D:\Test\Maven\DeepSpace\pom.xml'
-#    publishJUnitResults: true
-#    testResultsFiles: 'D:\Test\Maven\surefire-reports\TEST-*.xml'
-#    codeCoverageToolOption: 'Cobertura'
-#    javaHomeOption: 'JDKVersion'
-##    mavenVersionOption: 'Default'
- #   mavenAuthenticateFeed: false
- #   effectivePomSkip: false
- #   sonarQubeRunAnalysis: false
+- task: Mavenm@3
+  inputs:
+    mavenPomFile: 'D:\Test\Maven\DeepSpace\pom.xml'
+    publishJUnitResults: true
+    testResultsFiles: 'D:\Test\Maven\surefire-reports\TEST-*.xml'
+    codeCoverageToolOption: 'Cobertura'
+    javaHomeOption: 'JDKVersion'
+    mavenVersionOption: 'Default'
+    mavenAuthenticateFeed: false
+    effectivePomSkip: false
+    sonarQubeRunAnalysis: false
 
 #- task: SSH@0
 #  inputs:
@@ -79,8 +79,8 @@ steps:
 ##    publishLocation: 'Container'
 #   TargetPath: 'C:\localagent\_work\_newtemp'
 
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: 'D:\Test\MyArtifacts'
-    ArtifactName: 'MyArtifact'
-    publishLocation: 'Container'
+#- task: PublishBuildArtifacts@1
+#  inputs:
+#    PathtoPublish: 'D:\Test\MyArtifacts'
+#    ArtifactName: 'MyArtifact'
+#    publishLocation: 'Container'
