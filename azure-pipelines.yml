@@ -13,21 +13,21 @@ pool:
 
 variables:
   configuration: 'Debug'
-  Build.ArtifactStagingDirectory: 'C:/localagent/_work/1/s/test'
+  Build.ArtifactStagingDirectory: 'D:/Test/arttest'
 
 steps:
-- task: Mavenm@3
-  inputs:
-    mavenPomFile: 'D:\Test\Maven\DeepSpace\pom.xml'
-    publishJUnitResults: false
-    #testResultsFiles: 'D:\Test\Maven\surefire-reports\TEST-*.xml'
-    #codeCoverageToolOption: 'Cobertura'
-    javaHomeOption: 'JDKVersion'
-    jdkVersionOption: 14.0.2
-    mavenVersionOption: 'Default'
-    mavenAuthenticateFeed: false
-    effectivePomSkip: false
-    sonarQubeRunAnalysis: false
+#- task: Mavenm@3
+#  inputs:
+#    mavenPomFile: 'D:\Test\Maven\DeepSpace\pom.xml'
+#    publishJUnitResults: false
+#    #testResultsFiles: 'D:\Test\Maven\surefire-reports\TEST-*.xml'
+#    #codeCoverageToolOption: 'Cobertura'
+#    javaHomeOption: 'JDKVersion'
+#    jdkVersionOption: 14.0.2
+#    mavenVersionOption: 'Default'
+#    mavenAuthenticateFeed: false
+#    effectivePomSkip: false
+#    sonarQubeRunAnalysis: false
 
 #- task: SSH@0
 #  inputs:
@@ -52,11 +52,19 @@ steps:
 
 #- task: ArchiveFiles@2
 #  inputs:
-##    rootFolderOrFile: 'C:\localagent\_work\1\s'
+#    rootFolderOrFile: 'C:\localagent\_work\1\s'
 #    includeRootFolder: true
 #    archiveType: 'zip'
 #    archiveFile: 'C:\localagent\_work\1\art.zip'
 #    replaceExistingArchive: true
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'FilePath'
+    TargetPath: 'D:/Test/artout'
+
+
 
 #- task: ArchiveFiles@2
 ##  inputs:
