@@ -60,7 +60,14 @@ steps:
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'drop'
+    ArtifactName: 'drop1'
+    publishLocation: 'FilePath'
+    TargetPath: 'D:/Test/artout'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop2'
     publishLocation: 'FilePath'
     TargetPath: 'D:/Test/artout'
 
