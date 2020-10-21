@@ -16,6 +16,12 @@ variables:
   Build.ArtifactStagingDirectory: 'D:/Test/arttest'
 
 steps:
+
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: 'echo "$(Build.BuildNumber)"'
+
 #- task: Mavenm@3
 #  inputs:
 #    mavenPomFile: 'D:\Test\Maven\DeepSpace\pom.xml'
@@ -57,19 +63,19 @@ steps:
 #    archiveType: 'zip'
 #    archiveFile: 'C:\localagent\_work\1\art.zip'
 #    replaceExistingArchive: true
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'drop1'
-    publishLocation: 'FilePath'
-    TargetPath: 'D:/Test/artout'
+#- task: PublishBuildArtifacts@1
+#  inputs:
+#    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+##    ArtifactName: 'drop1'
+#    publishLocation: 'FilePath'
+#    TargetPath: 'D:/Test/artout'
 
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'drop2'
-    publishLocation: 'FilePath'
-    TargetPath: 'D:/Test/artout'
+#- task: PublishBuildArtifacts@1
+#  inputs:
+#    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+#    ArtifactName: 'drop2'
+#    publishLocation: 'FilePath'
+#    TargetPath: 'D:/Test/artout'
 
 
 
