@@ -20,7 +20,9 @@ steps:
 - task: Bash@3
   inputs:
     targetType: 'inline'
-    script: 'echo "$(Build.BuildNumber)"'
+    script: |
+      echo "$(Build.BuildNumber)"
+      echo "$(Build.BuildId)"
 
 #- task: Mavenm@3
 #  inputs:
