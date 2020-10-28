@@ -15,7 +15,15 @@ variables:
   #configuration: 'Debug'
   #Build.ArtifactStagingDirectory: 'D:/Test/arttest'
   #certificate: 'test_cert.p12'
-- group: group1
+#- group: group1
+
+
+strategy:
+  matrix:
+    APP_1:
+        certificate: 'test_cert.p12.p12'
+    APP_2:
+        certificate: 'TestP12.p12'
 
 steps:
 
