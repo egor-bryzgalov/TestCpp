@@ -12,7 +12,7 @@ pool:
 
 
 variables:
-  #configuration: 'Debug'
+  configuration: 'Debug'
   #Build.ArtifactStagingDirectory: 'D:/Test/arttest'
   #certificate: 'test_cert.p12'
 #- group: group1
