@@ -12,9 +12,10 @@ pool:
 
 
 variables:
-  configuration: 'Debug'
-  Build.ArtifactStagingDirectory: 'D:/Test/arttest'
-  certificate: 'test_cert.p12'
+  #configuration: 'Debug'
+  #Build.ArtifactStagingDirectory: 'D:/Test/arttest'
+  #certificate: 'test_cert.p12'
+- group: group1
 
 steps:
 
@@ -24,6 +25,12 @@ steps:
     certPwd: 'password'
     keychain: 'temp'
 
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: |
+      echo "$(certificate)"
+      echo "$(publicVar)"
 #- task: Mavenm@3
 #  inputs:
 #    mavenPomFile: 'D:\Test\Maven\DeepSpace\pom.xml'
