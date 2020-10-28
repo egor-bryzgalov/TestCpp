@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'Ubuntu-latest'
+  vmImage: 'macOS-latest'
   #name: 'default'
 
 
@@ -20,7 +20,7 @@ steps:
 
 - task: InstallAppleCertificate@2
   inputs:
-    certSecureFile: '$(certificate)'
+    certSecureFile: $(certificate)
     certPwd: 'password'
     keychain: 'temp'
 
