@@ -14,15 +14,15 @@ pool:
 variables:
   configuration: 'Debug'
   Build.ArtifactStagingDirectory: 'D:/Test/arttest'
+  certificate: 'test_cert.p12'
 
 steps:
 
-- task: Bash@3
+- task: InstallAppleCertificate@2
   inputs:
-    targetType: 'inline'
-    script: |
-      echo "$(Build.BuildNumber)"
-      echo "$(Build.BuildId)"
+    certSecureFile: '$(certificate)'
+    certPwd: 'password'
+    keychain: 'temp'
 
 #- task: Mavenm@3
 #  inputs:
