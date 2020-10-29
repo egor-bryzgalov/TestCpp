@@ -6,6 +6,7 @@
 trigger:
 - master
 
+
 pool:
   vmImage: 'macOS-10.15'
   #name: 'default'
@@ -25,13 +26,14 @@ strategy:
     APP_2:
         certificate: 'TestP12.p12'
 
+
 steps:
 
-#- task: InstallAppleCertificate@2
-#  inputs:
-#    certSecureFile: $(certificate)
-#    certPwd: 'password'
-#    keychain: 'temp'
+- task: InstallAppleCertificate@2
+  inputs:
+    certSecureFile: $(certificate)
+    certPwd: 'password'
+    keychain: 'temp'
 
 - task: Bash@3
   inputs:
