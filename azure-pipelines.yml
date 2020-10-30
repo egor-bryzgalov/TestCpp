@@ -18,7 +18,6 @@ variables:
   #certificate: 'test_cert.p12'
 - group: group1
 
-
 strategy:
   matrix:
     APP_1:
@@ -30,19 +29,14 @@ strategy:
 
 steps:
 
-${{ if eq(var, true) }}:
-  - task: InstallAppleCertificate@2
-    inputs:
+- task: InstallAppleCertificate@2
+  inputs:
+    ${{ if eq(var, true) }}:
       certSecureFile: $(cert1)
-      certPwd: 'password'
-      keychain: 'temp'
-
-${{ if eq(var, false) }}:
-  - task: InstallAppleCertificate@2
-    inputs:
+    ${{ if eq(var, false) }}:
       certSecureFile: $(cert2)
-      certPwd: 'password'
-      keychain: 'temp'
+    certPwd: 'password'
+    keychain: 'temp'
 
 - task: Bash@3
   inputs:
