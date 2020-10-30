@@ -1,11 +1,14 @@
 parameters:
-- name: 'certificate'
-  type: string
+- name: 'flag'
+  type: boolean
 
 steps:
 
 - task: InstallAppleCertificate@2
   inputs:
-    certSecureFile: ${{ parameters.certificate }}
+  - ${{ if eq( parameters.flag, true) }}:
+      certSecureFile: 'test_cert.p12'
+  - ${{ if eq( parameters.flag, false) }}:
+      certSecureFile: 'other_cert.p12'
     certPwd: 'password'
     keychain: 'temp'
