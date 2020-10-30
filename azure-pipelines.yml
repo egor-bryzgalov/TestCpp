@@ -22,9 +22,9 @@ strategy:
   matrix:
     APP_1:
         #certificate: 'test_cert.p12'
-        var: test_cert.p12
+        var: true
     APP_2:
-        var: 'some_other_cert'
+        var: false
 
 
 steps:
