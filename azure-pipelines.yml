@@ -31,7 +31,7 @@ steps:
 
 - template: './template.yml'
   parameters:
-    certficate: $(var)
+    certficate: ${{ var }}
 
 - task: Bash@3
   inputs:
