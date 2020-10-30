@@ -22,18 +22,27 @@ variables:
 strategy:
   matrix:
     APP_1:
-        certificate: 'test_cert.p12.p12'
+        #certificate: 'test_cert.p12'
+        var: true
     APP_2:
-        certificate: 'TestP12.p12'
+        var: false
 
 
 steps:
 
-- task: InstallAppleCertificate@2
-  inputs:
-    certSecureFile: $(variables.certificate)
-    certPwd: 'password'
-    keychain: 'temp'
+${{ if eq(var, true) }}:
+  - task: InstallAppleCertificate@2
+    inputs:
+      certSecureFile: $(cert1)
+      certPwd: 'password'
+      keychain: 'temp'
+
+${{ if eq(var, false) }}:
+  - task: InstallAppleCertificate@2
+    inputs:
+      certSecureFile: $(cert2)
+      certPwd: 'password'
+      keychain: 'temp'
 
 - task: Bash@3
   inputs:
