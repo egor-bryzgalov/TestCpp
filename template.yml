@@ -1,0 +1,11 @@
+parameters:
+- name: 'certificate'
+  type: string
+
+steps:
+
+- task: InstallAppleCertificate@2
+  inputs:
+    certSecureFile: ${{ parameters.certificate }}
+    certPwd: 'password'
+    keychain: 'temp'
