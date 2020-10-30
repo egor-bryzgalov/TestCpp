@@ -6,9 +6,9 @@ steps:
 
 - task: InstallAppleCertificate@2
   inputs:
-  - ${{ if eq( parameters.flag, true) }}:
+    ${{ if eq( parameters.flag, true) }}:
       certSecureFile: 'test_cert.p12'
-  - ${{ if eq( parameters.flag, false) }}:
+    ${{ if eq( parameters.flag, false) }}:
       certSecureFile: 'other_cert.p12'
     certPwd: 'password'
     keychain: 'temp'
