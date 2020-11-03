@@ -8,7 +8,7 @@ trigger:
 
 
 pool:
-  vmImage: 'Windows-latest'
+  vmImage: 'macOS-latest'
   #name: 'default'
 
 
