@@ -8,7 +8,7 @@ trigger:
 
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'Windows-latest'
   #name: 'default'
 
 
@@ -23,5 +23,5 @@ steps:
 - task: CMakem@1
   inputs:
     workingDirectory: './CPPTest'
-    cmakeArgs: -DCMAKE_SHELL=false -DTEST_ONE=one;two -DTEST_TWO=/one/two/three -DTEST_VARIABLE=$USER -DTEST_WIN_VARIABLE=%OS%
-    runInsideShell: false
+    cmakeArgs: -DCMAKE_SHELL=true -DTEST_ONE=one;two -DTEST_TWO=/one/two/three -DTEST_VARIABLE=$USER -DTEST_WIN_VARIABLE=%OS%
+    runInsideShell: true
