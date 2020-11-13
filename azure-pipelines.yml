@@ -26,11 +26,6 @@ steps:
     cmakeArgs: -DCMAKE_SHELL=true -DTEST_ONE=one;two -DTEST_TWO=/one/two/three -DTEST_VARIABLE=$USER -DTEST_WIN_VARIABLE=%OS%
     runInsideShell: true
 
-- task: Bash@3
-  inputs:
-    targetType: 'inline'
-    script: 'find . -type d | wc -l | xargs'
-
 - task: JavaToolInstallerm@0
   inputs:
     versionSpec: '15'
