@@ -20,18 +20,22 @@ variables:
 
 steps:
 
-- task: CMakem@1
-  inputs:
-    workingDirectory: './CPPTest'
-    cmakeArgs: -DCMAKE_SHELL=true -DTEST_ONE=one;two -DTEST_TWO=/one/two/three -DTEST_VARIABLE=$USER -DTEST_WIN_VARIABLE=%OS%
-    runInsideShell: true
+#- task: CMakem@1
+#  inputs:
+##    workingDirectory: './CPPTest'
+#    cmakeArgs: -DCMAKE_SHELL=true -DTEST_ONE=one;two -DTEST_TWO=/one/two/three -DTEST_VARIABLE=$USER -DTEST_WIN_VARIABLE=%OS%
+#    runInsideShell: true
 
-- task: JavaToolInstallerm@0
-  inputs:
-    versionSpec: '15'
-    jdkArchitectureOption: 'x64'
-    jdkSourceOption: 'LocalDirectory'
-    jdkFile: 'D:\Downloads\openjdk-15.0.1_windows-x64_bin.zip'
-    jdkDestinationDirectory: 'D:\Test\JDK_15'
-    cleanDestinationDirectory: true
+#- task: JavaToolInstallerm@0
+#  inputs:
+#    versionSpec: '15'
+#    jdkArchitectureOption: 'x64'
+#    jdkSourceOption: 'LocalDirectory'
+#    jdkFile: 'D:\Downloads\openjdk-15.0.1_windows-x64_bin.zip'
+#    jdkDestinationDirectory: 'D:\Test\JDK_15'
+#    cleanDestinationDirectory: true
 
+- task: PublishCodeCoverageResults@1
+  inputs:
+    codeCoverageTool: 'JaCoCo'
+    summaryFileLocation: ./file
