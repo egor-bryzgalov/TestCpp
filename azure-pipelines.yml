@@ -46,4 +46,4 @@ steps:
     azureCommonVirtualFile: 'openjdk-15.0.1_windows-x64_bin.zip'
     jdkDestinationDirectory: './'
     cleanDestinationDirectory: false
-    azureResourceManagerEndpoint: 'CIX_Eng(371d9573-3b58-46e5-8489-aac909ffc94c)'
+    azureResourceManagerEndpoint: 'TEST CIX'
