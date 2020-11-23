@@ -35,7 +35,6 @@ steps:
 #    jdkDestinationDirectory: 'D:\Test\JDK_15'
 #    cleanDestinationDirectory: true
 
-- task: PublishCodeCoverageResults@1
+- task: GoTool@0
   inputs:
-    codeCoverageTool: 'JaCoCo'
-    summaryFileLocation: ./file
+    version: '1.10'
