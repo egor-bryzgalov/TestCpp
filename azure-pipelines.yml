@@ -35,6 +35,6 @@ steps:
 #    jdkDestinationDirectory: 'D:\Test\JDK_15'
 #    cleanDestinationDirectory: true
 
-- task: GoTool1@0
+- task: GoTool2@0
   inputs:
     version: '1.10'
