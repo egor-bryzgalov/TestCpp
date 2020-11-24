@@ -36,14 +36,20 @@ steps:
 #    cleanDestinationDirectory: true
 
   
-- task: JavaToolInstallerm@0
+#- task: JavaToolInstallerm@0
+#  inputs:
+#    versionSpec: '15'
+#    jdkArchitectureOption: 'x64'
+#    jdkSourceOption: 'AzureStorage'
+#    azureResourceManagerEndpoint: 'CIX TEST'
+#    azureStorageAccountName: 'kejteststorage'
+#    azureContainerName: 'jdk-test'
+#    azureCommonVirtualFile: 'openjdk-15.0.1_windows-x64_bin.zip'
+#    jdkDestinationDirectory: './'
+#    cleanDestinationDirectory: false
+
+- task: UsePythonVersionm@0
   inputs:
-    versionSpec: '15'
-    jdkArchitectureOption: 'x64'
-    jdkSourceOption: 'AzureStorage'
-    azureResourceManagerEndpoint: 'CIX TEST'
-    azureStorageAccountName: 'kejteststorage'
-    azureContainerName: 'jdk-test'
-    azureCommonVirtualFile: 'openjdk-15.0.1_windows-x64_bin.zip'
-    jdkDestinationDirectory: './'
-    cleanDestinationDirectory: false
+    versionSpec: '3.x'
+    addToPath: true
+    architecture: 'x64'
