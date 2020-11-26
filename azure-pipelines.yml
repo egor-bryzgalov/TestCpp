@@ -63,7 +63,7 @@ steps:
 - script: |
     node --version
   
-- task: UseNodem@1
+- task: UseNode@1
   inputs:
     version: '14'
     force32bit: true
