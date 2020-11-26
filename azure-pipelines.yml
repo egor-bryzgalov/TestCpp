@@ -48,18 +48,25 @@ steps:
 #    jdkDestinationDirectory: './'
 #    cleanDestinationDirectory: false
 
-- task: UsePythonVersionm@0
+- task: UseNodem@1
   inputs:
-    versionSpec: '3.x'
-    addToPath: true
-    architecture: 'x64'
+    version: '8'
 
-- task: UseRubyVersionm@0
-  inputs:
-    versionSpec: '>= 2.4'
+- script: |
+    node --version
 
-- task: PublishBuildArtifacts@1
+- task: UseNodem@1
   inputs:
-    PathtoPublish: './'
-    ArtifactName: 'drop'
-    publishLocation: 'Container'
+    version: '6.x'
+    checkLatest: true
+
+- script: |
+    node --version
+  
+- task: UseNodem@1
+  inputs:
+    version: '14'
+    force32bit: true
+
+- script: |
+    node --version
