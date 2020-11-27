@@ -8,7 +8,7 @@ trigger:
 
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'Windows-latest'
   #name: 'default'
 
 
