@@ -54,5 +54,5 @@ steps:
 - task: cURLUploader@2
   inputs:
     files: 'test.txt'
-    serviceEndpoint: 'SSH Docker'
+    serviceEndpoint: 'docker'
     remotePath: './'
