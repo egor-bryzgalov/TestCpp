@@ -55,4 +55,4 @@ steps:
   inputs:
     files: 'test.txt'
     serviceEndpoint: 'docker'
-    remotePath: './'
+    remotePath: ''
