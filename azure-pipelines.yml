@@ -8,8 +8,8 @@ trigger:
 
 
 pool:
-  vmImage: 'Windows-latest'
-  #name: 'default'
+  #vmImage: 'Windows-latest'
+  name: 'default'
 
 
 variables:
@@ -48,25 +48,11 @@ steps:
 #    jdkDestinationDirectory: './'
 #    cleanDestinationDirectory: false
 
-- task: UseNodem@1
-  inputs:
-    version: '8'
-
 - script: |
-    node --version
+    echo 'test' > test.txt
 
-- task: UseNodem@1
+- task: cURLUploader@2
   inputs:
-    version: '6.x'
-    checkLatest: true
-
-- script: |
-    node --version
-  
-- task: UseNode@1
-  inputs:
-    version: '14'
-    force32bit: true
-
-- script: |
-    node --version
+    files: 'test.txt'
+    serviceEndpoint: 'SSH Docker'
+    remotePath: './'
