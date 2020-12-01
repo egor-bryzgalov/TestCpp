@@ -48,12 +48,12 @@ steps:
 #    jdkDestinationDirectory: './'
 #    cleanDestinationDirectory: false
 
-- bash: |
-    echo 'test' > test.txt
+#- bash: |
+ #   echo 'test' > test.txt
 
 - task: cURLUploader@2
   inputs:
-    files: 'test.txt'
+    files: 'D:\Test\test.txt'
     authType: 'UserAndPass'
     username: 'test'
     password: 'test'
