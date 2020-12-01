@@ -56,3 +56,4 @@ steps:
     files: 'test.txt'
     serviceEndpoint: 'docker'
     remotePath: ''
+    options: '--insecure'
