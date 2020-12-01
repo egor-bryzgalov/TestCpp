@@ -54,6 +54,9 @@ steps:
 - task: cURLUploader@2
   inputs:
     files: 'test.txt'
-    serviceEndpoint: 'docker'
-    remotePath: ''
+    authType: 'UserAndPass'
+    username: 'test'
+    password: 'test'
+    url: '127.0.0.1:23'
+    remotePath: 
     options: '--insecure'
