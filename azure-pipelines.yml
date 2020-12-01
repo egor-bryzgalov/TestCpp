@@ -8,8 +8,8 @@ trigger:
 
 
 pool:
-  #vmImage: 'Windows-latest'
-  name: 'default'
+  vmImage: 'Windows-latest'
+  #name: 'default'
 
 
 variables:
@@ -48,7 +48,7 @@ steps:
 #    jdkDestinationDirectory: './'
 #    cleanDestinationDirectory: false
 
-- script: |
+- bash: |
     echo 'test' > test.txt
 
 - task: cURLUploader@2
@@ -57,6 +57,6 @@ steps:
     authType: 'UserAndPass'
     username: 'test'
     password: 'test'
-    url: 'scp://127.0.0.1:23'
+    url: 'file://D/Test/target'
     remotePath: 
     options: '--insecure'
