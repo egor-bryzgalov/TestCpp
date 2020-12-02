@@ -58,5 +58,5 @@ steps:
     username: 'test'
     password: 'test'
     url: 'sftp://127.0.0.1'
-    remotePath: /home/ubuntu/test3.txt
+    remotePath: /home/ubuntu
     options: '--insecure'
