@@ -51,12 +51,6 @@ steps:
 #- bash: |
  #   echo 'test' > test.txt
 
-- task: cURLUploader@2
+- task: NuGetAuthenticate@0
   inputs:
-    files: 'D:\Test\test.txt'
-    authType: 'UserAndPass'
-    username: 'test'
-    password: 'test'
-    url: 'scp://127.0.0.1:23'
-    remotePath: /home/ubuntu
-    options: '--insecure'
+    nuGetServiceConnections: 'nuget-test'
