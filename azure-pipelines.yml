@@ -21,13 +21,14 @@ variables:
 steps:
 
 - task: UsePythonVersion@0
+  name: 'Test1'
   inputs:
     versionSpec: '3.6.x'
     addToPath: false
     architecture: 'x64'
 
 - bash: |
-    echo $(variables.pythonLocation)
-    echo [ -d "$(variables.pythonLocation)" ]
+    echo $(Test1.out)
+    echo [ -d "$(Test1.out)" ]
     python --version
     echo $PATH
