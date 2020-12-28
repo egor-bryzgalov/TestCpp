@@ -27,5 +27,7 @@ steps:
     architecture: 'x64'
 
 - bash: |
+    echo $(pythonLocation)
+    echo [ -d "$(pythonLocation)" ]
     python --version
     echo $PATH
