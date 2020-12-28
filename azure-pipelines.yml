@@ -27,4 +27,5 @@ steps:
     architecture: 'x64'
 
 - bash: |
+    python --version
     echo $PATH
