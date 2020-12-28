@@ -21,14 +21,40 @@ variables:
 steps:
 
 - task: UsePythonVersion@0
+  displayName: 'Do not append PATH'
   name: 'Test1'
   inputs:
-    versionSpec: '3.6.x'
+    versionSpec: '3.5.x'
     addToPath: false
     architecture: 'x64'
 
 - bash: |
-    echo $(Test1.pythonLocation)
-    -d "$(Test1.pythonLocation)" 
-    python --version
-    echo $PATH
+    if grep -q "Python/3.5" <<< "$PATH"; then
+        echo 'A value was added to PATH but shouldn't have to'
+        exit 1
+    fi
+  displayName: 'Check that PATH was not appended'
+
+- bash: | 
+    if [[ ! -d $(Test1.pythonLocation) ]]
+        echo 'Python location has not been set'
+        exit 1
+    fi
+    if grep -q "Python/3.5" <<< "$(Test1.pythonLocation)"
+        echo 'Python location is wrong'
+        exit 1
+    fi
+  displayName: 'Test output variable'
+
+- task: UsePythonVersion@0
+  displayName: 'Append PATH'
+  name: 'Test2'
+  inputs:
+    versionSpec: '3.7.x'
+
+- bash: |
+    if ! grep -q "Python/3.7" <<< "$PATH"
+        echo 'PATH has not been appended'
+        exit 1
+    fi
+  displayName: 'Test appending PATH'
