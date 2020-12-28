@@ -29,6 +29,6 @@ steps:
 
 - bash: |
     echo $(Test1.pythonLocation)
-    echo [ -d "$(Test1.pythonLocation)" ]
+    -d "$(Test1.pythonLocation)" 
     python --version
     echo $PATH
