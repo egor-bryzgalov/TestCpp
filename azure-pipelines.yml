@@ -28,7 +28,7 @@ steps:
     architecture: 'x64'
 
 - bash: |
-    echo $(Test1.out)
-    echo [ -d "$(Test1.out)" ]
+    echo $(Test1.pythonLocation)
+    echo [ -d "$(Test1.pythonLocation)" ]
     python --version
     echo $PATH
