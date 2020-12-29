@@ -17,42 +17,24 @@ variables:
   #Build.ArtifactStagingDirectory: 'D:/Test/arttest'
   #certificate: 'test_cert.p12'
 #- group: group1
-
 steps:
 
 - task: UsePythonVersion@0
   displayName: 'Do not append PATH'
   name: 'Test1'
   inputs:
-    versionSpec: '3.5.x'
+    versionSpec: '3.7.x'
     addToPath: false
     architecture: 'x64'
 
 - bash: |
-    if grep -q "Python/3.5" <<< "$PATH"; then
+    if grep -q "Python/3.7" <<< "$PATH"; then
         echo 'A value was added to PATH but should not have to'
         exit 1
     else
         echo 'PATH was not appended. Test passed'
     fi
   displayName: 'Check that PATH was not appended'
-
-#- bash: | 
-#    if [[ ! -d $(Test1.pythonLocation) ]]
-#    then
-#        echo 'Python location has not been set'
-#        exit 1
-#    else
-#        echo 'Python location has been set'
-#    fi
-#    if ! grep -q "Python/3.5" <<< "$(Test1.pythonLocation)"
-##    then
-#        echo 'Python location is wrong'
-#        exit 1
-#    else
-#        echo 'Python location is OK'
-#    fi
-#  displayName: 'Test output variable'
 
 - pwsh: |
     if (Test-Path "$(Test1.pythonLocation)") {
@@ -62,9 +44,9 @@ steps:
     }
     echo 'pythonLocation=$(Test1.pythonLocation)'
 
-    $pattern = 'Python/3.5'
+    $pattern = 'Python/3.7'
     if ($env:OS -like '*Windows*') {
-      $pattern = 'Python\3.5'
+      $pattern = 'Python\3.7'
     }
 
     if ('$(Test1.pythonLocation)' -like "*$pattern*") {
@@ -73,14 +55,15 @@ steps:
       throw 'Python location is wrong'
     }
   displayName: 'Test output variable'
+
 - task: UsePythonVersion@0
   displayName: 'Append PATH'
   name: 'Test2'
   inputs:
-    versionSpec: '3.7.x'
+    versionSpec: '3.8.x'
 
 - bash: |
-    if ! grep -q "Python/3.7" <<< "$PATH";
+    if ! grep -q "Python/3.8" <<< "$PATH";
     then
         echo 'PATH has not been appended'
         exit 1
@@ -88,7 +71,3 @@ steps:
         echo 'PATH has been appended'
     fi
   displayName: 'Test appending PATH'
-
-
-
-    
