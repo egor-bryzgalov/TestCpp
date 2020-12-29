@@ -29,7 +29,7 @@ steps:
     architecture: 'x64'
 
 - bash: |
-    if grep -q "Python/3.5" <<< "$PATH"; then
+    if grep -q 'Python/3.5' <<< "$PATH"; then
         echo 'A value was added to PATH but shouldn't have to'
         exit 1
     fi
@@ -40,7 +40,7 @@ steps:
         echo 'Python location has not been set'
         exit 1
     fi
-    if grep -q "Python/3.5" <<< "$(Test1.pythonLocation)"
+    if grep -q 'Python/3.5' <<< "$(Test1.pythonLocation)"
         echo 'Python location is wrong'
         exit 1
     fi
@@ -53,7 +53,7 @@ steps:
     versionSpec: '3.7.x'
 
 - bash: |
-    if ! grep -q "Python/3.7" <<< "$PATH"
+    if ! grep -q 'Python/3.7' <<< "$PATH"
         echo 'PATH has not been appended'
         exit 1
     fi
