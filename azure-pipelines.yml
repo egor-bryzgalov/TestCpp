@@ -37,23 +37,35 @@ steps:
     fi
   displayName: 'Check that PATH was not appended'
 
-- bash: | 
-    if [[ ! -d $(Test1.pythonLocation) ]]
-    then
-        echo 'Python location has not been set'
-        exit 1
-    else
-        echo 'Python location has been set'
-    fi
-    if ! grep -q "Python/3.5" <<< "$(Test1.pythonLocation)"
-    then
-        echo 'Python location is wrong'
-        exit 1
-    else
-        echo 'Python location is OK'
-    fi
-  displayName: 'Test output variable'
+#- bash: | 
+#    if [[ ! -d $(Test1.pythonLocation) ]]
+#    then
+#        echo 'Python location has not been set'
+#        exit 1
+#    else
+#        echo 'Python location has been set'
+#    fi
+#    if ! grep -q "Python/3.5" <<< "$(Test1.pythonLocation)"
+##    then
+#        echo 'Python location is wrong'
+#        exit 1
+#    else
+#        echo 'Python location is OK'
+#    fi
+#  displayName: 'Test output variable'
 
+- pwsh: |
+    if (Test-Path "$(Test1.pythonLocation)") {
+        Write-Host 'Python location has been set'
+    } else {
+      throw 'Python location has not been set'
+    }
+    if ('$(Test1.pythonLocation)' -like '*Python/3.5*') {
+      Write-Host 'Python location is OK'
+    } else {
+      throw 'Python location is wrong'
+    }
+  displayName: 'Test output variable'
 - task: UsePythonVersion@0
   displayName: 'Append PATH'
   name: 'Test2'
