@@ -8,7 +8,7 @@ trigger:
 
 
 pool:
-  vmImage: 'Windows-latest'
+  vmImage: 'Ubuntu-latest'
   #name: 'default'
 
 
@@ -61,7 +61,13 @@ steps:
       throw 'Python location has not been set'
     }
     echo 'pythonLocation=$(Test1.pythonLocation)'
-    if ('$(Test1.pythonLocation)' -like '*Python\3.5*') {
+
+    $pattern = 'Python/3.5'
+    if ($env:OS -like '*Windows*') {
+      $pattern = 'Python\3.5'
+    }
+
+    if ('$(Test1.pythonLocation)' -like "*$pattern*") {
       Write-Host 'Python location is OK'
     } else {
       throw 'Python location is wrong'
