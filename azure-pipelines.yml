@@ -60,7 +60,8 @@ steps:
     } else {
       throw 'Python location has not been set'
     }
-    if ('$(Test1.pythonLocation)' -like '*Python/3.5*') {
+    echo 'pythonLocation=$(Test1.pythonLocation)'
+    if ('$(Test1.pythonLocation)' -like '*Python\3.5*') {
       Write-Host 'Python location is OK'
     } else {
       throw 'Python location is wrong'
