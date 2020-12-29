@@ -29,9 +29,11 @@ steps:
     architecture: 'x64'
 
 - bash: |
-    if grep -q 'Python/3.5' <<< "$PATH"; then
+    if grep -q "Python/3.5" <<< "$PATH"; then
         echo 'A value was added to PATH but should not have to'
         exit 1
+    else
+        echo 'PATH was not appended. Test passed'
     fi
   displayName: 'Check that PATH was not appended'
 
@@ -40,12 +42,15 @@ steps:
     then
         echo 'Python location has not been set'
         exit 1
+    else
+        echo 'Python location has been set'
     fi
-    echo "$(Test1.pythonLocation)"
-    if ! grep -q 'Python/3.5' <<< "$(Test1.pythonLocation)"
+    if ! grep -q "Python/3.5" <<< "$(Test1.pythonLocation)"
     then
         echo 'Python location is wrong'
         exit 1
+    else
+        echo 'Python location is OK'
     fi
   displayName: 'Test output variable'
 
@@ -56,8 +61,15 @@ steps:
     versionSpec: '3.7.x'
 
 - bash: |
-    if ! grep -q 'Python/3.7' <<< "$PATH"; then
+    if ! grep -q "Python/3.7" <<< "$PATH";
+    then
         echo 'PATH has not been appended'
         exit 1
+    else
+        echo 'PATH has been appended'
     fi
   displayName: 'Test appending PATH'
+
+
+
+    
