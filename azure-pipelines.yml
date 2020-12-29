@@ -18,7 +18,8 @@ variables:
   #certificate: 'test_cert.p12'
 #- group: group1
 steps:
-
+- bash: |
+    echo $PATH
 - task: UsePythonVersion@0
   displayName: 'Do not append PATH'
   name: 'Test1'
