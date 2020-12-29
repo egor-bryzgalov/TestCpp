@@ -41,6 +41,7 @@ steps:
         echo 'Python location has not been set'
         exit 1
     fi
+    echo "$(Test1.pythonLocation)"
     if grep -q 'Python/3.5' <<< "$(Test1.pythonLocation)"
     then
         echo 'Python location is wrong'
