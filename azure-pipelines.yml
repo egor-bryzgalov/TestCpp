@@ -20,7 +20,7 @@ variables:
 steps:
 - bash: |
     echo $PATH
-- task: UsePythonVersion@0
+- task: UsePythonVersionm@0
   displayName: 'Do not append PATH'
   name: 'Test1'
   inputs:
@@ -58,7 +58,7 @@ steps:
     }
   displayName: 'Test output variable'
 
-- task: UsePythonVersion@0
+- task: UsePythonVersionm@0
   displayName: 'Append PATH'
   name: 'Test2'
   inputs:
