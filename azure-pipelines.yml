@@ -20,6 +20,11 @@ variables:
 steps:
 - bash: |
     echo $PATH
+- task: PublishCodeCoverageResults@2
+  inputs:
+    codeCoverageTool: 'JaCoCo'
+    summaryFileLocation: 'asdasd'
+
 - task: UsePythonVersionm@0
   displayName: 'Do not append PATH'
   name: 'Test1'
