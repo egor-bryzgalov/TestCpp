@@ -26,6 +26,9 @@ steps:
       $PAT="$(PAT)"
       $branch="$(branch)"
 
+      git config  user.email "you@example.com"
+      git config  user.name "Your Name"
+
       git checkout -b $branch
       Write-Host 'Trying to pull the remote branch:'
       git pull https://$PAT@github.com/egor-bryzgalov/TestCpp.git $branch
