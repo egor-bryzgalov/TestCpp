@@ -26,7 +26,7 @@ steps:
       $PAT="$(PAT)"
       $branch="$(branch)"
 
-      git checkout -b test10
+      git checkout -b $branch
       Write-Host 'Trying to pull the remote branch:'
       git pull https://$PAT@github.com/egor-bryzgalov/TestCpp.git $branch
       if (-not $?) {
