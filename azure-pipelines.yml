@@ -21,7 +21,7 @@ trigger:
 jobs:
 - job: Job1
   pool:
-    name: 'default'
+    name: 'v-egbryz'
     demands:
       - agent.name -equals O21
   steps:
@@ -35,7 +35,7 @@ jobs:
 
 - job: Job2
   pool:
-    name: 'default'
+    name: 'v-egbryz'
     demands:
       - agent.name -equals O21a
   steps:
