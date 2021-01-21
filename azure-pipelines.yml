@@ -8,8 +8,8 @@ trigger:
 
 
 pool:
-  vmImage: 'Windows-latest'
-  #name: 'default'
+  #vmImage: 'Windows-latest'
+  name: 'default'
 
 
 variables:
