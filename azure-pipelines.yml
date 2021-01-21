@@ -28,9 +28,9 @@ jobs:
   - task: JenkinsQueueJob@2
     inputs:
       serverEndpoint: 'Jenkins1'
-      jobName: 'Test1'
+      jobName: 'TestFolder/Repro1'
       captureConsole: true
-      capturePipeline: true
+      capturePipeline: false
       isParameterizedJob: false
 
 - job: Job2
@@ -42,8 +42,8 @@ jobs:
   - task: JenkinsQueueJob@2
     inputs:
       serverEndpoint: 'Jenkins1'
-      jobName: 'Test2'
+      jobName: 'TestFolder/Repro1'
       captureConsole: true
-      capturePipeline: true
+      capturePipeline: false
       isParameterizedJob: false
 
