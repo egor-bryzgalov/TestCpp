@@ -19,20 +19,10 @@ variables:
 #- group: group1
 steps:
 
-- task: PowerShell@2
+- task: JenkinsQueueJob@2
   inputs:
-    targetType: 'inline'
-    script: |
-      $PAT="$(PAT)"
-      $branch="$(branch)"
-
-      git config  user.email "you@example.com"
-      git config  user.name "Your Name"
-
-      git checkout -b $branch
-      Write-Host 'Trying to pull the remote branch:'
-      git pull https://$PAT@github.com/egor-bryzgalov/TestCpp.git $branch
-      if (-not $?) {
-        Write-Host 'Failed to pull the remote branch. This is expected if the remote branch doesn't exist.
-      }
-      git push https://$PAT@github.com/egor-bryzgalov/TestCpp.git $branch
+    serverEndpoint: 'Jenkins1'
+    jobName: 'Test1'
+    captureConsole: true
+    capturePipeline: true
+    isParameterizedJob: false
