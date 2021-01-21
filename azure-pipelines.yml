@@ -7,22 +7,43 @@ trigger:
 - master
 
 
-pool:
+#pool:
   #vmImage: 'Windows-latest'
-  name: 'default'
+#  name: 'default'
 
 
-variables:
-  configuration: 'Debug'
+#variables:
+ # configuration: 'Debug'
   #Build.ArtifactStagingDirectory: 'D:/Test/arttest'
   #certificate: 'test_cert.p12'
 #- group: group1
-steps:
 
-- task: JenkinsQueueJob@2
-  inputs:
-    serverEndpoint: 'Jenkins1'
-    jobName: 'Test1'
-    captureConsole: true
-    capturePipeline: true
-    isParameterizedJob: false
+jobs:
+- job: Job1
+  pool:
+    name: 'default'
+    demands:
+      - agent.name -equals O21
+  steps:
+  - task: JenkinsQueueJob@2
+    inputs:
+      serverEndpoint: 'Jenkins1'
+      jobName: 'Test1'
+      captureConsole: true
+      capturePipeline: true
+      isParameterizedJob: false
+
+- job: Job2
+  pool:
+    name: 'default'
+    demands:
+      - agent.name -equals O21a
+  steps:
+  - task: JenkinsQueueJob@2
+    inputs:
+      serverEndpoint: 'Jenkins1'
+      jobName: 'Test2'
+      captureConsole: true
+      capturePipeline: true
+      isParameterizedJob: false
+
