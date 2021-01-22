@@ -42,7 +42,7 @@ jobs:
   - task: JenkinsQueueJobm@2
     inputs:
       serverEndpoint: 'Jenkins1'
-      jobName: 'TestFolder/Repro1'
+      jobName: 'TestFolder/Repro2'
       captureConsole: true
       capturePipeline: false
       isParameterizedJob: false
