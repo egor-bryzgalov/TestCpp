@@ -35,7 +35,7 @@ jobs:
       jobParameters: > 
         param=Repro1
 
-        sleep=30
+        sleep=60
 
 - job: Job2
   pool:
@@ -53,5 +53,5 @@ jobs:
       jobParameters: > 
         param=Repro2
         
-        sleep=30
+        sleep=60
 
