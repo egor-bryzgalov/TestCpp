@@ -31,7 +31,8 @@ jobs:
       jobName: 'TestFolder/Repro1'
       captureConsole: true
       capturePipeline: false
-      isParameterizedJob: false
+      isParameterizedJob: true
+      jobParameters: 'echo Repro1'
 
 - job: Job2
   pool:
@@ -45,5 +46,6 @@ jobs:
       jobName: 'TestFolder/Repro2'
       captureConsole: true
       capturePipeline: false
-      isParameterizedJob: false
+      isParameterizedJob: true
+      jobParameters: 'echo Repro2'
 
