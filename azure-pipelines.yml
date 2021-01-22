@@ -25,7 +25,7 @@ jobs:
     demands:
       - agent.name -equals O21
   steps:
-  - task: JenkinsQueueJobm@2
+  - task: JenkinsQueueJoba@2
     inputs:
       serverEndpoint: 'Jenkins1'
       jobName: 'TestFolder/Repro1'
@@ -43,7 +43,7 @@ jobs:
     demands:
       - agent.name -equals O21a
   steps:
-  - task: JenkinsQueueJobm@2
+  - task: JenkinsQueueJoba@2
     inputs:
       serverEndpoint: 'Jenkins1'
       jobName: 'TestFolder/Repro2'
