@@ -33,9 +33,9 @@ jobs:
       capturePipeline: false
       isParameterizedJob: true
       jobParameters: > 
-        param=Repro1
+        ECHO=Repro1
 
-        sleep=60
+        SLEEP=60
 
 - job: Job2
   pool:
@@ -51,7 +51,7 @@ jobs:
       capturePipeline: false
       isParameterizedJob: true
       jobParameters: > 
-        param=Repro2
+        ECHO=Repro2
         
-        sleep=60
+        SLEEP=60
 
