@@ -25,6 +25,10 @@ jobs:
     demands:
       - agent.name -equals O21
   steps:
+  
+  - powershell: |
+      sleep 3
+      
   - task: JenkinsQueueJoba@2
     inputs:
       serverEndpoint: 'Jenkins1'
