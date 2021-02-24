@@ -21,7 +21,7 @@ trigger:
 jobs:
 - job: Job1
   pool:
-    name: 'Test'
+    name: 'v-egbryz'
     demands:
       - agent.name -equals O21
   steps:
@@ -39,7 +39,6 @@ jobs:
         SLEEP=60
 
 - job: Job2
-  condition: false
   pool:
     name: 'v-egbryz'
     demands:
