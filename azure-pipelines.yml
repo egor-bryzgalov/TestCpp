@@ -3,8 +3,7 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
-trigger:
-- master
+trigger: none
 
 
 #pool:
@@ -26,7 +25,7 @@ jobs:
       - agent.name -equals O21
   steps:
 
-  - task: JenkinsQueueJoba@2
+  - task: JenkinsQueueJob@2
     inputs:
       serverEndpoint: 'Jenkins1'
       jobName: 'TestFolder/Repro1'
@@ -44,7 +43,7 @@ jobs:
     demands:
       - agent.name -equals O21a
   steps:
-  - task: JenkinsQueueJoba@2
+  - task: JenkinsQueueJob@2
     inputs:
       serverEndpoint: 'Jenkins1'
       jobName: 'TestFolder/Repro2'
